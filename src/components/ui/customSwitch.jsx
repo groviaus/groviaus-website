@@ -19,7 +19,7 @@ const Switch = React.forwardRef(({ className, checked, onCheckedChange, ...props
   };
 
   return (
-    <div className="w-max border">
+    <div className="w-max border mx-8">
       <motion.div
         tabIndex={0}
         role="switch"
@@ -43,17 +43,17 @@ const Switch = React.forwardRef(({ className, checked, onCheckedChange, ...props
         className="pointer-events-none relative flex items-center justify-center block size-[6rem] rounded-full bg-slate-100 border border-slate-200"
         animate={{
           x: isChecked ? 110 : -10,
-          // boxShadow: isChecked 
-          //   ? "0px 0px 0px rgba(0,0,0,0)" 
-          //   : "6px 6px 12px #b8c1cf, -6px -6px 12px #ffffff"
+          rotate: isChecked ? 360 : 0,
+          duration: 5, // Slowed down transition duration
+          delay: 2
         }}
         transition={{
           type: "spring",
-          stiffness: 500,
-          damping: 30
+          stiffness: 200, // Reduced stiffness for a slower transition
+          damping: 50 // Increased damping for a slower transition
         }}
       >
-        <span className="size-[5.2rem] rounded-full bg-slate-100 shadow-inner flex items-center justify-center" 
+        <span className="size-[5.2rem] rounded-full bg-slate-200 shadow-inner flex items-center justify-center border" 
           style={{
             boxShadow: "inset 2px 2px 5px #b8c1cf, inset -2px -2px 5px #ffffff"
           }}
