@@ -19,7 +19,7 @@ const Switch = React.forwardRef(({ className, checked, onCheckedChange, ...props
   };
 
   return (
-    <div className="w-max border mx-8">
+    <div className="w-max border mt-16 mx-8">
       <motion.div
         tabIndex={0}
         role="switch"
@@ -29,7 +29,7 @@ const Switch = React.forwardRef(({ className, checked, onCheckedChange, ...props
       onKeyDown={handleKeyDown}
       ref={ref}
       className={cn(
-        "relative inline-flex ring-[4px] ring-offset-[1.4rem] ring-offset-[#595ef9] ring-[#8489e2] h-[4.5rem] w-[12rem] shrink-0 items-center rounded-full  outline-none focus-visible:ring-[3px] focus-visible:border-ring focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 drop-shadow-black/30 drop-shadow-2xl",
+        "relative inline-flex ring-[4px] ring-offset-[1.4rem] ring-offset-[#595ef9] ring-[#8489e2] h-[4.5rem] w-[15rem] shrink-0 items-center rounded-full  outline-none focus-visible:ring-[3px] focus-visible:border-ring focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 drop-shadow-black/30 drop-shadow-2xl",
         isChecked ? "" : "bg-input dark:bg-input/80",
         className
       )}
@@ -42,7 +42,7 @@ const Switch = React.forwardRef(({ className, checked, onCheckedChange, ...props
       <motion.span 
         className="pointer-events-none relative flex items-center justify-center block size-[6rem] rounded-full bg-slate-100 border border-slate-200"
         animate={{
-          x: isChecked ? 110 : -10,
+          x: isChecked ? 155 : -10,
           rotate: isChecked ? 360 : 0,
           duration: 5, // Slowed down transition duration
           delay: 2
@@ -55,7 +55,7 @@ const Switch = React.forwardRef(({ className, checked, onCheckedChange, ...props
       >
         <span className="size-[5.2rem] rounded-full bg-slate-200 shadow-inner flex items-center justify-center border" 
           style={{
-            boxShadow: "inset 2px 2px 5px #b8c1cf, inset -2px -2px 5px #ffffff"
+            boxShadow: "inset 4px 4px 5px #b8c1cf, inset -4px -4px 5px #ffffff"
           }}
         />
       </motion.span>
