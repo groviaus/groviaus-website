@@ -20,7 +20,7 @@ const Switch = React.forwardRef(
     };
 
     return (
-      <div className="w-max  mt-10 x-4">
+      <div className="w-max mt-6 sm:mt-10 mx-2">
         <motion.div
           tabIndex={0}
           role="switch"
@@ -30,7 +30,7 @@ const Switch = React.forwardRef(
           onKeyDown={handleKeyDown}
           ref={ref}
           className={cn(
-            "relative inline-flex ring-[4px]  ring-[#b4b7ec] h-[3.3rem] w-[7.15rem] shrink-0 items-center rounded-full  outline-none focus-visible:ring-[3px] focus-visible:border-ring focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 drop-shadow-black/30 shadow-2xl bg-gradient-to-r from-[#ece1e6] via-[#9a9dfe] to-[#464bf1]",
+            "relative inline-flex ring-[3px] sm:ring-[4px] ring-[#b4b7ec] h-[2.5rem] sm:h-[3.3rem] w-[5.5rem] sm:w-[7.15rem] shrink-0 items-center rounded-full outline-none focus-visible:ring-[2px] sm:focus-visible:ring-[3px] focus-visible:border-ring focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 drop-shadow-black/30 shadow-2xl bg-gradient-to-r from-[#ece1e6] via-[#9a9dfe] to-[#464bf1]",
             className
           )}
           animate={{
@@ -42,7 +42,7 @@ const Switch = React.forwardRef(
           {...props}
         >
           <div
-            className="absolute cursor-pointer left-3 right-5 rounded-full bg-white h-[1.8rem] w-[5.5rem]"
+            className="absolute cursor-pointer left-2 sm:left-3 right-3 sm:right-5 rounded-full bg-white h-[1.4rem] sm:h-[1.8rem] w-[4.2rem] sm:w-[5.5rem]"
             style={{
               boxShadow:
                 "inset 8px 8px 16px rgba(184, 193, 207, 0.8), inset -8px -8px 16px rgba(255, 255, 255, 0.8)",
@@ -50,9 +50,9 @@ const Switch = React.forwardRef(
             }}
           ></div>
           <motion.span
-            className="pointer-events-none relative flex items-center justify-center block size-[2.75rem] cursor-pointer rounded-full bg-slate-100 border border-slate-200"
+            className="pointer-events-none relative flex items-center justify-center block size-[2rem] sm:size-[2.75rem] cursor-pointer rounded-full bg-slate-100 border border-slate-200"
             animate={{
-              x: isChecked ? 66 : 5,
+              x: isChecked ? 45 : 4,
               rotate: isChecked ? 360 : 0,
               duration: 5,
               delay: 2,
@@ -64,7 +64,7 @@ const Switch = React.forwardRef(
             }}
           >
             <span
-              className="size-[2.3rem] rounded-full bg-slate-200 shadow-inner flex items-center justify-center border"
+              className="size-[1.7rem] sm:size-[2.3rem] rounded-full bg-slate-200 shadow-inner flex items-center justify-center border"
               style={{
                 boxShadow:
                   "inset 4px 4px 5px #b8c1cf, inset -4px -4px 5px #ffffff",
