@@ -20,7 +20,7 @@ const Switch = React.forwardRef(
     };
 
     return (
-      <div className="w-max  mt-10 x-2">
+      <div className="w-max  mt-10 x-4">
         <motion.div
           tabIndex={0}
           role="switch"
