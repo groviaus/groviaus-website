@@ -1,4 +1,4 @@
-import ThreeDCard from "../../../components/ThreeDcard";
+import ThreeDCard from "../../../components/ThreeDCard";
 import CircleandCursor from "../../../components/CircleandCursor";
 import shape from "@/assets/images/ourService/shape.png";
 import { motion } from "framer-motion";
@@ -17,16 +17,16 @@ const Services = () => {
         "https://img.freepik.com/free-psd/landing-page-minimal-style-art-gallery-with-man_23-2148821375.jpg",
       heading: "Design",
       description:
-        "We are a design-first agency handling everything from landing pages to SaaS platforms.",
+        "Craft stunning and user-centric designs — from modern landing pages to complex SaaS interfaces.",
       tags: [
-        "Branding",
-        "App Design",
-        "Web Design",
-        "UX Research",
-        "Enterprise",
-        "Prototype",
+        "Brand Identity",
+        "Product Design",
+        "UI/UX Design",
+        "Wireframing",
+        "Prototyping",
+        "User Testing",
       ],
-      buttonText: "Start a design project",
+      buttonText: "Launch a design project",
     },
     {
       id: 2,
@@ -34,14 +34,14 @@ const Services = () => {
         "https://img.freepik.com/free-photo/professional-programmer-working-late-dark-office_1098-18705.jpg?t=st=1746277313~exp=1746280913~hmac=50c7982b93f771b071fd92c74a3af9415a6d9f48fba3bd026393268188a7eb3e&w=1380",
       heading: "Development",
       description:
-        "we are a development-first agency handling everything from landing pages to SaaS platforms.",
+        "Build fast, responsive, and scalable digital products — from web apps to mobile-first platforms.",
       tags: [
-        "Web Development",
-        "Mobile Development",
-        "UI/UX Design",
-        "API Development",
+        "Frontend Development",
+        "Backend APIs",
+        "Cross-Platform Apps",
+        "Performance Optimization",
       ],
-      buttonText: "Start a Development project",
+      buttonText: "Launch a development project",
     },
     {
       id: 3,
@@ -49,31 +49,38 @@ const Services = () => {
         "https://img.freepik.com/free-photo/map-lying-wooden-table_53876-105723.jpg?t=st=1746277473~exp=1746281073~hmac=59becfbff40b0b4f0790cf775fd54230192567caf4b21b0b023c93b4f9d3f604&w=1380",
       heading: "Marketing",
       description:
-        "We are a marketing-first agency handling everything from landing pages to SaaS platforms.",
-      tags: ["SEO", "SEM", "SMM", "Email Marketing", "Social Media Marketing"],
-      buttonText: "Start a Marketing project",
+        "Accelerate your brand's growth with custom digital marketing strategies tailored to your audience.",
+      tags: ["SEO", "SEM", "SMM", "Email Marketing", "Lead Generation"],
+      buttonText: "Start a marketing campaign",
     },
     {
       id: 4,
       image:
         "https://img.freepik.com/premium-photo/assortment-desk-elements-with-empty-notebook_636537-217483.jpg",
-      heading: "Marketing",
+      heading: "Performance Marketing",
       description:
-        "We are a marketing-first agency handling everything from landing pages to SaaS platforms.",
-      tags: ["SEO", "SEM", "SMM", "Email Marketing", "Social Media Marketing"],
-      buttonText: "Start a Marketing project",
+        "Drive measurable results with data-driven advertising strategies and campaign optimization.",
+      tags: ["PPC Campaigns", "Conversion Tracking", "A/B Testing", "Retargeting", "Analytics"],
+      buttonText: "Run a performance campaign",
     },
     {
       id: 5,
       image:
-        "https://img.freepik.com/free-photo/map-lying-wooden-table_53876-105723.jpg?t=st=1746277473~exp=1746281073~hmac=59becfbff40b0b4f0790cf775fd54230192567caf4b21b0b023c93b4f9d3f604&w=1380",
-      heading: "Marketing",
+        "https://img.freepik.com/premium-photo/3d-seo-optimization-with-rocket-marketing-social-media-concept-interface-web-analytics-strategy-research-planing-laptop-3d-seo-strategy-vector-icon-render-illustration_776674-491248.jpg",
+      heading: "Content & SEO",
       description:
-        "We are a marketing-first agency handling everything from landing pages to SaaS platforms.",
-      tags: ["SEO", "SEM", "SMM", "Email Marketing", "Social Media Marketing"],
-      buttonText: "Start a Marketing project",
+        "Boost organic traffic and engagement with high-quality content marketing and on-page SEO.",
+      tags: [
+        "Content Strategy",
+        "Blog Writing",
+        "Keyword Research",
+        "Technical SEO",
+        "Backlink Building",
+      ],
+      buttonText: "Start a content project",
     },
   ];
+  
 
   // Setup intersection observer for each card
   useEffect(() => {
@@ -145,12 +152,12 @@ const Services = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-violet-200 text-5xl sm:text-[100px] flex items-center ml-8 sm:ml-0 justify-center text-center gap-2"
+              className="text-violet-200 text-5xl sm:text-[100px] flex items-center ml-8 sm:ml-0 justify-center text-center gap-2 font-medium "
             >
               Services{" "}
               <CircleandCursor
-                circleClassName="w-8 h-8 sm:w-10 sm:h-10 fill-white stroke-1 !stroke-stone-900"
-                cursorClassName="w-8 h-8 sm:w-10 sm:h-10 fill-white stroke-1 !stroke-stone-900"
+                circleClassName="w-5 h-5 sm:w-10 sm:h-10 fill-white stroke-1 !stroke-stone-900"
+                cursorClassName="w-5 h-5 sm:w-10 sm:h-10 fill-violet-500 stroke-2 sm:left-3 sm:top-3 left-2 top-2 !stroke-stone-900"
                 className="mt-5 sm:mt-14"
               />
             </motion.h1>
@@ -180,12 +187,12 @@ const Services = () => {
             initial={{ opacity: 0, rotate: -10 }}
             animate={{ opacity: 1, rotate: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="hidden sm:block rounded-full mx-auto overflow-hidden w-96 h-96 hover:rotate-45 hover:scale-90 transition-all duration-300"
+            className="hidden sm:block rounded-full mx-auto overflow-hidden w-80 h-80 hover:rotate-12 hover:scale-90 transition-all duration-300 animate-bounce mt-10"
           >
             <img
               src={shape}
               alt=""
-              className="w-full drop-shadow-2xl h-full object-cover"
+              className="w-full drop-shadow-2xl h-full object-cover "
             />
           </motion.div>
         </div>

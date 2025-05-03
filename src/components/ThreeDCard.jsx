@@ -12,10 +12,10 @@ export default function ThreeDCard({ content = {} }) {
 
   return (
     <CardContainer className="inter-var  ">
-      <CardBody className="bg-whit relative group/card dark:hover:shadow-2xl dark:hover:shadow-rose-500/[0.1] w-auto sm:w-[400px] h-auto rounded-3xl p-6 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-right bg-cover  ">
+      <CardBody className="bg-white sm:bg-white/10  relative group/card dark:hover:shadow-2xl dark:hover:shadow-rose-500/[0.1] w-auto sm:w-[400px] h-auto rounded-3xl p-6 bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-right bg-cover border sm:border-none ">
         
         {/* Top illustration section */}
-        <CardItem translateZ="80" className="w-full relative h-60">
+        <CardItem translateZ="60" className="w-full relative h-60">
           <div className="absolute top-0 left-0 w-full h-full">
             <img
               src={image}
@@ -26,12 +26,12 @@ export default function ThreeDCard({ content = {} }) {
         </CardItem>
 
         {/* Heading */}
-        <CardItem translateZ="60" className="text-3xl font-bold text-white mt-6 mb-2">
+        <CardItem translateZ="60" className="text-3xl font-bold sm:text-white mt-6 mb-2">
           {heading}
         </CardItem>
 
         {/* Description */}
-        <CardItem translateZ="50" className="text-sm text-white/90 mb-4">
+        <CardItem translateZ="50" className="text-sm sm:text-white/90 mb-4">
           {description}
         </CardItem>
 
