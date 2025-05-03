@@ -5,7 +5,7 @@ import {Mouse, Circle, MousePointer2, TrendingUp } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <main className="relative mt-12 sm:mt-24 mb-16 sm:mb-28 px-4 sm:px-0">
+    <main className="relative mt-12 sm:mt-24 mb-16 sm:mb-28 px-4 sm:px-0 ">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-xs text-gray-600 tracking-widest uppercase font-medium mb-4 sm:mb-8 letter-spacing-2">
           CONSULTING, PROGRAMMING & DESIGN
