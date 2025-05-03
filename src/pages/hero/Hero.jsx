@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import GrowthWord from "../../components/GrowthWord";
+import {Mouse, Circle, MousePointer2 } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -23,9 +24,12 @@ export default function Hero() {
           <GrowthWord />
         </div>
 
+        <div className="flex items-center justify-center gap-1 sm:gap-2 -mt-2 mb-4">
+          <CircleandCursor />
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight mb-4 sm:mb-6">
           of your busines
         </h1>
+        </div>
 
         <p className="text-gray-700 mb-2 text-base sm:text-lg leading-relaxed">
           We turn great ideas into working products
@@ -34,7 +38,7 @@ export default function Hero() {
           We focus on good communication and understanding your business
         </p>
 
-        <div className="flex flex-col items-center gap-4 sm:gap-7">
+        <div className="flex flex-row mx-auto  w-full justify-center items-center gap-4 sm:gap-7">
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide">
             Estimate the project
           </button>
@@ -47,40 +51,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Client logos */}
-      <div className="mt-16 sm:mt-32 flex flex-wrap justify-center gap-8 sm:gap-16 opacity-40">
-        <img
-          src="/fila-logo-on-white.png"
-          height={24}
-          width={70}
-          alt="FILA"
-          className="object-contain h-10 w-10"
-        />
-        <img
-          src="/swoosh-icon.png"
-          height={24}
-          width={70}
-          alt="Nike"
-          className="object-contain h-10 w-10"
-        />
-        <img
-          src="/three-stripes-abstract.png"
-          height={24}
-          width={70}
-          alt="Adidas"
-          className="object-contain h-10 w-10"
-        />
-        <img
-          src="/reebok-vector-logo.png"
-          height={24}
-          width={70}
-          alt="Reebok"
-          className="object-contain h-10 w-10"
-        />
-       
-      </div>
 
-      {/* Transform badge */}
+      {/* Transform badge
       <div className="hidden sm:block absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32">
         <div className="relative w-full h-full">
           <div className="absolute inset-0 flex items-center justify-center">
@@ -106,7 +78,16 @@ export default function Hero() {
             <ArrowRight className="w-4 h-4 sm:w-6 sm:h-6 transform -rotate-45" />
           </div>
         </div>
-      </div>
+      </div> */}
     </main>
   );
 }
+
+const CircleandCursor = () => {
+  return (
+    <div className="flex -mt-2 mr-1 sm:mr-2 relative items-center justify-center ">
+      <Circle className=" w-6 h-6 sm:w-8 sm:h-8 fill-black" />
+      <MousePointer2 className="absolute top-2 left-2 stroke-1 stroke-white z-10 w-6 h-6 sm:w-10 sm:h-10 fill-black" />
+    </div>
+  );
+};
