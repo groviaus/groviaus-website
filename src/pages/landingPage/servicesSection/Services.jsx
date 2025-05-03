@@ -31,7 +31,7 @@ const Services = () => {
     {
       id: 2,
       image:
-        "https://img.freepik.com/free-photo/professional-programmer-working-late-dark-office_1098-18705.jpg?t=st=1746277313~exp=1746280913~hmac=50c7982b93f771b071fd92c74a3af9415a6d9f48fba3bd026393268188a7eb3e&w=1380",
+        "https://img.freepik.com/free-photo/professional-programmer-working-late-dark-office_1098-18705.jpg",
       heading: "Development",
       description:
         "Build fast, responsive, and scalable digital products — from web apps to mobile-first platforms.",
