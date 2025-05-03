@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import GrowthWord from "../../components/GrowthWord";
-import {Mouse, Circle, MousePointer2 } from 'lucide-react';
+import {Mouse, Circle, MousePointer2, TrendingUp } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -39,15 +39,16 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-row mx-auto  w-full justify-center items-center gap-4 sm:gap-7">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide">
-            Estimate the project
+          <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide flex items-center justify-center">
+            Grow your business
+            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 ml-2 mt-1" />
           </button>
-          <Link
+          {/* <button
             to="#"
-            className="text-gray-800 hover:text-gray-600 text-sm font-medium tracking-wide"
+            className="bg-slate-50 hover:bg-white text-slate-800 border border-slate-800 hover:border-slate-700 font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide"
           >
             More about us
-          </Link>
+          </button> */}
         </div>
       </div>
 
