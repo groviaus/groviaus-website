@@ -52,7 +52,7 @@ const Switch = React.forwardRef(
           <motion.span
             className="pointer-events-none relative flex items-center justify-center block size-[2rem] sm:size-[2.75rem] cursor-pointer rounded-full bg-slate-100 border border-slate-200"
             animate={{
-              x: isChecked ? 45 : 4,
+              x: isChecked ? window.innerWidth > 768 ? 65 : 50 : 4,
               rotate: isChecked ? 360 : 0,
               duration: 5,
               delay: 2,
