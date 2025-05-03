@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import GrowthWord from "../../components/GrowthWord";
 import {Mouse, Circle, MousePointer2, TrendingUp } from 'lucide-react';
-
+import CircleandCursor from "@/components/CircleandCursor";
 export default function Hero() {
   return (
-    <main className="relative mt-12 sm:mt-24 mb-16 sm:mb-28 px-4 sm:px-0 ">
+    <main className="relative mt-12 sm:mt-24 pb-16  sm:mb-28 px-4 sm:px-0 ">
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-xs text-gray-600 tracking-widest uppercase font-medium mb-4 sm:mb-8 letter-spacing-2">
           CONSULTING, PROGRAMMING & DESIGN
@@ -84,11 +84,4 @@ export default function Hero() {
   );
 }
 
-const CircleandCursor = () => {
-  return (
-    <div className="flex -mt-2 mr-1 sm:mr-2 relative items-center justify-center ">
-      <Circle className=" w-6 h-6 sm:w-8 sm:h-8 fill-black" />
-      <MousePointer2 className="absolute top-2 left-2 stroke-1 stroke-white z-10 w-6 h-6 sm:w-10 sm:h-10 fill-black" />
-    </div>
-  );
-};
+
