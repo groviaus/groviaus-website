@@ -1,4 +1,3 @@
-"use client";
 import ThreeDCard from "../../../components/ThreeDCard";
 import CircleandCursor from "../../../components/CircleandCursor";
 import shape from "@/assets/images/ourService/shape.png";
@@ -8,10 +7,7 @@ import { useRef, useEffect, useState } from "react";
 const Services = () => {
   // Animation controls
   const [cardsInView, setCardsInView] = useState({});
-  const [isMobile, setIsMobile] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const cardRefs = useRef([]);
-  const sectionRef = useRef(null);
 
   // Data for service cards
   const serviceCards = [
@@ -64,13 +60,7 @@ const Services = () => {
       heading: "Performance Marketing",
       description:
         "Drive measurable results with data-driven advertising strategies and campaign optimization.",
-      tags: [
-        "PPC Campaigns",
-        "Conversion Tracking",
-        "A/B Testing",
-        "Retargeting",
-        "Analytics",
-      ],
+      tags: ["PPC Campaigns", "Conversion Tracking", "A/B Testing", "Retargeting", "Analytics"],
       buttonText: "Run a performance campaign",
     },
     {
@@ -90,124 +80,53 @@ const Services = () => {
       buttonText: "Start a content project",
     },
   ];
-
-  // Check if device is mobile and set up scroll listener
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 768); // Standard breakpoint for medium screens
-    };
-
-    // Track scroll position
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-
-      // Update card scales on scroll for mobile
-      if (isMobile && cardRefs.current.length > 0) {
-        updateCardScales();
-      }
-    };
-
-    // Initial checks
-    checkIfMobile();
-
-    // Add event listeners
-    window.addEventListener("resize", checkIfMobile);
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isMobile]);
-
-  // Function to update card scales based on scroll position
-  const updateCardScales = () => {
-    cardRefs.current.forEach((ref, index) => {
-      if (!ref) return;
-
-      const rect = ref.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-
-      // If card is above the middle of the viewport, scale it down
-      if (rect.top < viewportHeight / 3) {
-        // Calculate how far above the middle it is (as percentage)
-        const distanceAboveMiddle =
-          (viewportHeight / 3 - rect.top) / viewportHeight;
-
-        // Apply scale transformation directly to the element
-        // Scale down to 30% based on distance above middle
-        const scale = Math.max(0.3, 1 - distanceAboveMiddle * 0.3);
-        ref.style.transform = `scale(${scale})`;
-        ref.style.transition = "transform 0.3s ease-out";
-      } else {
-        // Reset scale for cards below the middle
-        ref.style.transform = "scale(1)";
-      }
-    });
-  };
+  
 
   // Setup intersection observer for each card
   useEffect(() => {
     cardRefs.current = cardRefs.current.slice(0, serviceCards.length);
 
-    // For desktop: use standard intersection observer animation
-    if (!isMobile) {
-      const observers = cardRefs.current.map((ref, index) => {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                // Add a slight delay based on card index
-                setTimeout(() => {
-                  setCardsInView((prev) => ({
-                    ...prev,
-                    [index]: true,
-                  }));
-                }, index * 300); // 300ms delay between each card animation
+    const observers = cardRefs.current.map((ref, index) => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add a slight delay based on card index
+              setTimeout(() => {
+                setCardsInView((prev) => ({
+                  ...prev,
+                  [index]: true,
+                }));
+              }, index * (window.innerWidth > 768 ? 200 : 0)); // 200ms delay between each card animation
 
-                // Unobserve after it's in view
-                observer.unobserve(ref);
-              }
-            });
-          },
-          { threshold: 0.2 } // Trigger when at least 20% of the card is visible
-        );
+              // Unobserve after it's in view
+              observer.unobserve(ref);
+            }
+          });
+        },
+        { threshold: 0.3 } // Trigger when at least 30% of the card is visible
+      );
 
-        if (ref) {
-          observer.observe(ref);
-        }
+      if (ref) {
+        observer.observe(ref);
+      }
 
-        return observer;
+      return observer;
+    });
+
+    // Cleanup
+    return () => {
+      observers.forEach((observer) => {
+        observer.disconnect();
       });
-
-      // Cleanup for desktop observers
-      return () => {
-        observers.forEach((observer) => {
-          observer.disconnect();
-        });
-      };
-    }
-    // For mobile: mark all cards as visible immediately
-    else {
-      // Mark all cards as in view for initial animation
-      cardRefs.current.forEach((_, index) => {
-        setCardsInView((prev) => ({
-          ...prev,
-          [index]: true,
-        }));
-      });
-
-      // Initial update of card scales
-      setTimeout(updateCardScales, 500);
-    }
-  }, [serviceCards.length, isMobile]);
+    };
+  }, [serviceCards.length]);
 
   // Card animations
   const cardVariants = {
     hidden: {
       opacity: 0,
-      y: 50,
+      y: window.innerWidth > 768 ? 50 : 0,
       scale: 0.9,
       rotateX: -10,
     },
@@ -224,10 +143,7 @@ const Services = () => {
   };
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-stone-900 flex justify-center items-center z-[99] relative -mt-5 border-2 border-purple-100 shadow-2xl rounded-4xl h-max pb-20 pt-1 m-1 sm:m-10"
-    >
+    <section className="bg-stone-900 flex justify-center items-center z-[99] relative -mt-5 border-2  border-purple-100 shadow-2xl rounded-4xl h-max pb-20 pt-1 m-1 sm:m-10">
       <div className="grid sm:grid-cols-3 grid-cols-1 pt-10 items-center justify-center gap-6 px-5 sm:px-10">
         {/* First column with title and first card */}
         <div className="sm:row-span-2 row-span-1 grid items-center justify-center gap-6 sm:gap-10 md:static sticky top-5">
@@ -262,9 +178,6 @@ const Services = () => {
             variants={cardVariants}
             initial="hidden"
             animate={cardsInView[0] ? "visible" : "hidden"}
-            className={
-              isMobile ? "transition-transform duration-300 ease-out" : ""
-            }
           >
             <ThreeDCard content={serviceCards[0]} />
           </motion.div>
@@ -288,9 +201,7 @@ const Services = () => {
         {serviceCards.slice(1).map((card, i) => (
           <motion.div
             key={card.id}
-            className={`sticky top-36 md:static ${
-              isMobile ? "transition-transform duration-300 ease-out" : ""
-            }`}
+            className={`sticky top-36 md:static`}
             ref={(el) => (cardRefs.current[i + 1] = el)}
             variants={cardVariants}
             initial="hidden"
