@@ -143,7 +143,7 @@ const Services = () => {
   };
 
   return (
-    <section className="bg-stone-900 flex justify-center items-center z-[999] relative -mt-5 border-2  border-purple-100 shadow-2xl rounded-4xl h-max pb-20 pt-1 m-1 sm:mx-10 -mb-5">
+    <section className="bg-stone-900 flex justify-center items-center z-[999] relative -mt-5 border-2  border-purple-100 shadow-2xl rounded-4xl h-max pb-20 pt-1 m-1 sm:mx-10 -mb-10">
       <div className="grid sm:grid-cols-3 grid-cols-1 pt-10 items-center justify-center gap-6 px-5 sm:px-10">
         {/* First column with title and first card */}
         <div className="sm:row-span-2 row-span-1 grid items-center justify-center gap-6 sm:gap-10 md:static sticky top-5">

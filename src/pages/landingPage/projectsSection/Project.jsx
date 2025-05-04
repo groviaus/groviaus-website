@@ -52,7 +52,7 @@ const Project = () => {
       title: "Podcast - Podcast Mobile App Solution",
       subtitle: "Mobile App Solution",
       tags: ["UI/UX Design", "App Design", "Wireframe"],
-      image: "/placeholder.svg?key=nkv7n",
+      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-1.png",
       buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
       iconColor: "text-white",
       imagePosition: "object-left",
@@ -66,7 +66,35 @@ const Project = () => {
       title: "Podcast - Podcast Mobile",
       subtitle: "Application Landing Page",
       tags: ["Web Design", "Landing Page", "Wireframe"],
-      image: "/placeholder.svg?key=k3vlu",
+      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-2.png",
+      buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
+      iconColor: "text-white",
+      imagePosition: "object-right",
+      rating: 4.8,
+      reviews: 98,
+      date: "June 2023",
+      duration: "6 weeks",
+    },
+    {
+      id: 3,
+      title: "Podcast - Podcast Mobile App Solution",
+      subtitle: "Mobile App Solution",
+      tags: ["UI/UX Design", "App Design", "Wireframe"],
+      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-3.png",
+      buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
+      iconColor: "text-white",
+      imagePosition: "object-left",
+      rating: 4.9,
+      reviews: 124,
+      date: "May 2023",
+      duration: "8 weeks",
+    },
+    {
+      id: 4,
+      title: "Podcast - Podcast Mobile",
+      subtitle: "Application Landing Page",
+      tags: ["Web Design", "Landing Page", "Wireframe"],
+      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-4.png",
       buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
       iconColor: "text-white",
       imagePosition: "object-right",
@@ -80,7 +108,7 @@ const Project = () => {
   return (
     <div
       ref={containerRef}
-      className="mx-auto z-[100] relative px-6 py-24 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden"
+      className="mx-auto md:mx-5 shadow-2xl z-[100] relative px-6 py-30 bg-white rounded-4xl overflow-hidden"
     >
       <div
         className={`text-center mb-20 transition-all duration-1000 ease-out ${
@@ -108,11 +136,11 @@ const Project = () => {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`flex-1 bg-white rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
+            className={`bg-violet-100 rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
@@ -148,7 +176,7 @@ const Project = () => {
               <img
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
-                className="w-full h-full rounded-t-2xl object-cover transition-transform duration-1000 ease-out"
+                className="w-full h-full rounded-t-2xl object-cover object-top transition-transform duration-1000 ease-out"
                 style={{
                   transform:
                     hoveredCard === project.id ? "scale(1.08)" : "scale(1)",
