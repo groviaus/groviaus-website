@@ -1,7 +1,7 @@
 import MarqueeVertical from "./Marquee";
 const Testimonial = () => {
   return (
-    <section className="testimonial  bg-stone-900  z-[999] relative  border-2  border-purple-100 shadow-2xl rounded-4xl h-max py-18 m-1 sm:m-10 px-2 sm:p-6 sm:py-10">
+    <section className="testimonial  bg-stone-900  z-[999] relative  border-2  border-purple-100 shadow-2xl rounded-4xl h-max py-18 m-1 sm:mx-10 -mt-5 px-2 sm:p-6 sm:py-10">
       <div className="sm:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left column */}
         <div className="lg:col-span-6 space-y-4 sm:space-y-6 flex flex-col justify-center sm:items-start items-center">

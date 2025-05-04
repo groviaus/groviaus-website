@@ -93,8 +93,8 @@ export default function MarqueeVertical() {
           </ReviewCard>
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/5 bg-gradient-to-b from-stone-900"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/5 bg-gradient-to-t from-stone-900"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-stone-900"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-stone-900"></div>
     </div>
   );
 }
