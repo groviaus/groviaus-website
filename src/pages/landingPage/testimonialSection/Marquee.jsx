@@ -50,10 +50,13 @@ const reviews = [
 const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
 const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
 
-const ReviewCard = ({ children,className }) => {
+const ReviewCard = ({ children, className }) => {
   return (
     <figure
-      className={cn("relative h-full w-fit sm:w-full cursor-pointer   sm:p-1",className)}
+      className={cn(
+        "relative h-full w-fit sm:w-full cursor-none   sm:p-1",
+        className
+      )}
     >
       {children}
     </figure>

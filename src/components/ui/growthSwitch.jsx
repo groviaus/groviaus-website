@@ -42,7 +42,7 @@ const Switch = React.forwardRef(
           {...props}
         >
           <div
-            className="absolute cursor-pointer left-2 sm:left-3 right-3 sm:right-5 rounded-full bg-white h-[1.4rem] sm:h-[1.8rem] w-[4.2rem] sm:w-[5.5rem]"
+            className="absolute cursor-none left-2 sm:left-3 right-3 sm:right-5 rounded-full bg-white h-[1.4rem] sm:h-[1.8rem] w-[4.2rem] sm:w-[5.5rem]"
             style={{
               boxShadow:
                 "inset 8px 8px 16px rgba(184, 193, 207, 0.8), inset -8px -8px 16px rgba(255, 255, 255, 0.8)",
@@ -50,9 +50,9 @@ const Switch = React.forwardRef(
             }}
           ></div>
           <motion.span
-            className="pointer-events-none relative flex items-center justify-center block size-[2rem] sm:size-[2.75rem] cursor-pointer rounded-full bg-slate-100 border border-slate-200"
+            className="pointer-events-none relative flex items-center justify-center block size-[2rem] sm:size-[2.75rem] cursor-none rounded-full bg-slate-100 border border-slate-200"
             animate={{
-              x: isChecked ? window.innerWidth > 768 ? 65 : 50 : 4,
+              x: isChecked ? (window.innerWidth > 768 ? 65 : 50) : 4,
               rotate: isChecked ? 360 : 0,
               duration: 5,
               delay: 2,

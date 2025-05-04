@@ -4,7 +4,7 @@ import CircularText from "../../../yes/CircularText/CircularText";
 import img from "@/assets/images/footer/footerBg.jpg";
 export default function Footer() {
   return (
-    <div className="min-h-screen flex flex-col justify-between relative overflow-hidden z-[99] rounded-t-3xl">
+    <div className="sm:min-h-screen flex py-10 flex-col justify-between relative overflow-hidden z-[99] rounded-t-3xl">
       {/* Textured background overlay */}
       <div
         className="absolute inset-0 z-10 "
@@ -16,10 +16,10 @@ export default function Footer() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 flex-1 container mx-auto px-6 pt-20 pb-10 flex flex-col justify-center">
-        <div className="flex justify-between items-start">
+      <div className="relative z-10 flex-1 container mx-auto px-6 sm:pt-20  sm:pb-10 flex flex-col justify-center">
+        <div className="flex  justify-between items-start">
           <div className="max-w-3xl">
-            <h1 className="text-white text-5xl md:text-7xl font-bold tracking-wider leading-tight">
+            <h1 className="text-white text-3xl md:text-7xl font-bold tracking-wider leading-tight">
               LET'S DISCUSS A<br />
               PROJECT TOGETHER
             </h1>
@@ -30,8 +30,8 @@ export default function Footer() {
               text="Groviaus*Digital*Marketing*"
               onHover="goBonkers"
               spinDuration={50}
-              className="custom-class bg-white"
-              textClassName="font-semibold text-stone-800"
+              className="custom-class bg-white !w-[150px] !h-[150px] sm:!w-[200px] sm:!h-[200px]"
+              textClassName="font-semibold text-stone-800 text-lg sm:text-2xl"
             />
           </div>
         </div>
@@ -41,8 +41,8 @@ export default function Footer() {
       <div className="relative z-10 container mx-auto px-6 py-8 border-t border-gray-800">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h2 className="text-violet text-3xl font-bold tracking-widest">
-              MOUNO
+            <h2 className="text-white text-3xl font-bold tracking-widest">
+              Groviaus
             </h2>
           </div>
 
@@ -119,14 +119,7 @@ export default function Footer() {
                   Blog
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-white hover:text-violet transition-colors"
-                >
-                  Shop
-                </a>
-              </li>
+              
               <li>
                 <a
                   href="#"
@@ -139,13 +132,8 @@ export default function Footer() {
           </nav>
 
           <div className="mt-6 md:mt-0 text-gray-400 text-sm">
-            © Groviaus 2025. All rights reserved.{" "}
-            <a
-              href="#"
-              className="text-white hover:text-violet transition-colors"
-            >
-              Case-Themes
-            </a>
+            © Groviaus 2025. All rights reserved
+            
           </div>
         </div>
       </div>

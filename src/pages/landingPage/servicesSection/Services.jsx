@@ -3,7 +3,7 @@ import CircleandCursor from "../../../components/CircleandCursor";
 import shape from "@/assets/images/ourService/shape.png";
 import { motion } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-
+// import SplashCursor from "../../../../yes/SplashCursor/SplashCursor";
 const Services = () => {
   // Animation controls
   const [cardsInView, setCardsInView] = useState({});
@@ -211,6 +211,7 @@ const Services = () => {
           </motion.div>
         ))}
       </div>
+      {/* <SplashCursor /> */}
     </section>
   );
 };
