@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Star } from "lucide-react";
 
 const TestimonialCard = ({ rating, text, name, role, avatarSrc }) => {

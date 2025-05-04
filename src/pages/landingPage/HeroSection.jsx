@@ -1,6 +1,6 @@
 import Navbar from "../header/Navbar";
 import Hero from "../hero/Hero";
-
+// import { SmoothCursor } from "@/components/ui/smooth-cursor";
 export default function HeroSection() {
   return (
     <div className="sm:min-h-screen sticky top-0 bg-white bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover  z-10 ">
@@ -16,7 +16,7 @@ export default function HeroSection() {
 
         <Navbar />
         <Hero />
-        {/* <Project /> */}
+        {/* <SmoothCursor /> */}
       </div>
     </div>
   );

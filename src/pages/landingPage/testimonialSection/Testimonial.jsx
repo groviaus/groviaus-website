@@ -1,4 +1,5 @@
 import MarqueeVertical from "./Marquee";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 const Testimonial = () => {
   return (
     <section className="testimonial  bg-stone-900  z-[999] relative  border-2  border-purple-100 shadow-2xl rounded-4xl h-max py-18 m-1 sm:mx-10 -mt-5 px-2 sm:p-6 sm:py-10">
@@ -48,6 +49,7 @@ const Testimonial = () => {
           <MarqueeVertical />
         </div>
       </div>
+      <SmoothCursor />
     </section>
   );
 };
