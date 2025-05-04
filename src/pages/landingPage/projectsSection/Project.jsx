@@ -80,7 +80,7 @@ const Project = () => {
   return (
     <div
       ref={containerRef}
-      className="md:mx-10 mx-auto z-[100] relative px-6 py-24 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden"
+      className="mx-auto z-[100] relative px-6 py-24 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden"
     >
       <div
         className={`text-center mb-20 transition-all duration-1000 ease-out ${
@@ -227,7 +227,7 @@ const Project = () => {
                 }}
               ></div> */}
 
-              <button className="flex items-center justify-center w-14 h-14 bg-orange-500 rounded-full text-white font-medium hover:text-lime-600 transition-all duration-300 group-hover:translate-x-2">
+              <button className="flex items-center justify-center !min-w-14 h-14 bg-orange-500 rounded-full text-white font-medium hover:text-lime-600 transition-all duration-300 group-hover:translate-x-2">
                 <ArrowUpRight className="w-7 h-7 transition-transform duration-300" />
               </button>
             </div>
