@@ -115,10 +115,10 @@ const Project = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
-        <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-lime-100 to-lime-200 rounded-full text-sm font-medium text-gray-800 shadow-sm mb-4 animate-shimmer">
+        <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-violet-300 to-violet-500 rounded-full text-sm font-medium shadow-sm mb-4 animate-shimmer text-white">
           Our Portfolio
         </span>
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 tracking-tight">
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 text-gray-900 tracking-tight">
           <span className="inline-block animate-reveal-text">Featured</span>{" "}
           <span
             className="inline-block animate-reveal-text"
@@ -140,7 +140,7 @@ const Project = () => {
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`bg-violet-100 rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
+            className={`bg-violet-100 drop-shadow-lg rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
@@ -222,7 +222,7 @@ const Project = () => {
 
               <div className="space-y-2 mb-4">
                 <h3
-                  className="text-2xl md:text-3xl font-bold text-gray-800 tracking-tight transition-transform duration-500 ease-out"
+                  className="text-2xl md:text-3xl font-bold text-violet-900 tracking-tight transition-transform duration-500 ease-out"
                   style={{
                     transform:
                       hoveredCard === project.id
@@ -255,8 +255,8 @@ const Project = () => {
                 }}
               ></div> */}
 
-              <button className="flex items-center justify-center !min-w-14 h-14 bg-orange-500 rounded-full text-white font-medium hover:text-lime-600 transition-all duration-300 group-hover:translate-x-2">
-                <ArrowUpRight className="w-7 h-7 transition-transform duration-300" />
+              <button className="flex items-center justify-center !min-w-14 h-14 bg-orange-500 rounded-full text-white font-medium  transition-all duration-300  hover:bg-violet-500 group hover:drop-shadow">
+                <ArrowUpRight className="w-7 h-7 transition-transform duration-800 hover:text-lime-100 group-hover:-rotate-360 group-hover:scale-110" />
               </button>
             </div>
 
