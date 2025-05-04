@@ -16,6 +16,7 @@ export default function HeroSection() {
 
         <Navbar />
         <Hero />
+        {/* <Project /> */}
       </div>
     </div>
   );
