@@ -223,7 +223,7 @@ export default function ContactSection() {
               <div className="flex items-center">
                 <button
                   type="submit"
-                  className="bg-[#a4e22b] text-black font-medium py-3 px-8 rounded-full flex items-center transition-all duration-300 hover:bg-[#93cb26] group"
+                  className="bg-orange-500 text-black font-medium py-2 pl-8 pr-2 rounded-full flex items-center transition-all duration-300 hover:bg-orange-600 group"
                 >
                   Send Message
                   <div className="ml-4 bg-black rounded-full p-2 group-hover:bg-gray-800 transition-all duration-300">
