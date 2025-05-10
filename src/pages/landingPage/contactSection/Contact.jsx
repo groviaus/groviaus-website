@@ -61,7 +61,7 @@ export default function ContactSection() {
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         {/* Header with green line */}
         <div className="flex items-center mb-2">
-          <div className="w-8 h-0.5 bg-[#a4e22b] mr-3"></div>
+          <div className="w-8 h-0.5 bg-orange-500 mr-3"></div>
           <span className="text-gray-600 font-medium">Contact Us</span>
         </div>
 
