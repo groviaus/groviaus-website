@@ -16,7 +16,7 @@ export default function Footer() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 flex-1 container mx-auto px-6 sm:pt-20  sm:pb-10 flex flex-col justify-center">
+      <div className="relative z-10 flex-1 container max-w-7xl mx-auto px-6 sm:pt-20  sm:pb-10 flex flex-col justify-center">
         <div className="flex  justify-between items-start">
           <div className="max-w-3xl">
             <h1 className="text-white text-3xl md:text-7xl font-bold tracking-wider leading-tight">
@@ -38,7 +38,7 @@ export default function Footer() {
       </div>
 
       {/* Footer */}
-      <div className="relative z-10 container mx-auto px-6 py-8 border-t border-gray-800">
+      <div className="relative z-10 max-w-7xl container mx-auto px-6 py-8 border-t border-gray-800">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h2 className="text-white text-3xl font-bold tracking-widest">
