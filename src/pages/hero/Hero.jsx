@@ -39,7 +39,7 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-row mx-auto  w-full justify-center items-center gap-4 sm:gap-7">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide flex items-center justify-center">
+          <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide flex items-center justify-center cursor-none">
             Grow your business
             <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 ml-2 mt-1" />
           </button>
