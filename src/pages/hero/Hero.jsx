@@ -15,7 +15,7 @@ export default function Hero() {
           <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-none">
             We support
           </h1>
-          <div className="bg-purple-600 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center ml-2 sm:ml-3 flex-shrink-0">
+          <div className="bg-purple-600 rounded-full w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center ml-2 sm:ml-3 flex-shrink-0 animate-float">
             <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
         </div>
@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
 
         <div className="flex items-center justify-center gap-1 sm:gap-2 -mt-2 mb-4">
-          <CircleandCursor />
+          <CircleandCursor className="animate-float" />
         <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight mb-4 sm:mb-6">
           of your busines
         </h1>

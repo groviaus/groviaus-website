@@ -49,7 +49,9 @@ const Testimonial = () => {
           <MarqueeVertical />
         </div>
       </div>
-      <SmoothCursor />
+      <div className="hidden sm:block">
+        <SmoothCursor />
+      </div>
     </section>
   );
 };

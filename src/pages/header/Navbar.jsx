@@ -27,14 +27,14 @@ export default function Navbar() {
           to="#"
           className="text-gray-800 hover:text-gray-600 text-sm font-medium tracking-wide"
         >
-          Portfolio
+          Work
         </Link>
-        <Link
+        {/* <Link
           to="#"
           className="text-gray-800 hover:text-gray-600 text-sm font-medium tracking-wide"
         >
           Blog
-        </Link>
+        </Link> */}
       </div>
 
       {/* Logo - Centered */}

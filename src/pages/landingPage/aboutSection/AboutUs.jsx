@@ -61,7 +61,7 @@ export default function AboutUs() {
         </span>
 
         <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-          We're <span className="text-violet-400">GrovViaUs</span>
+          We're <span className="text-violet-400">GroViaUs</span>
           <br />
           Digital Agency
         </h1>
@@ -94,7 +94,7 @@ export default function AboutUs() {
         </div>
 
         <div className="flex items-center">
-          <button className="flex items-center bg-violet-400 text-black px-6 py-3 rounded-full font-medium">
+          <button className="flex items-center bg-violet-400 text-black pl-6 pr-3 py-2 rounded-full font-medium">
             Learn More
             <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center ml-3">
               <ArrowRight className="w-4 h-4 text-white" />
