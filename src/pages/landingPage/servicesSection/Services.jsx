@@ -46,7 +46,7 @@ const Services = () => {
     {
       id: 3,
       image:
-        "https://img.freepik.com/free-photo/map-lying-wooden-table_53876-105723.jpg?t=st=1746277473~exp=1746281073~hmac=59becfbff40b0b4f0790cf775fd54230192567caf4b21b0b023c93b4f9d3f604&w=1380",
+        "https://img.freepik.com/free-photo/map-lying-wooden-table_53876-105723.jpg",
       heading: "Marketing",
       description:
         "Accelerate your brand's growth with custom digital marketing strategies tailored to your audience.",
@@ -56,7 +56,7 @@ const Services = () => {
     {
       id: 4,
       image:
-        "https://img.freepik.com/premium-photo/assortment-desk-elements-with-empty-notebook_636537-217483.jpg",
+        "https://img.freepik.com/free-photo/3d-cartoon-scene-depicting-variety-people-multitasking_23-2151294503.jpg",
       heading: "Performance Marketing",
       description:
         "Drive measurable results with data-driven advertising strategies and campaign optimization.",

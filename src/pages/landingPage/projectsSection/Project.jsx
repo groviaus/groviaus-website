@@ -8,6 +8,10 @@ import {
   Calendar,
   ChevronRight,
 } from "lucide-react";
+import resilientgrow from "@/assets/images/project/resilientgrow.webp"
+import lts from "@/assets/images/project/LTS.webp"
+import amcoderbit from "@/assets/images/project/amcoderbits.webp"
+import lakshaya from "@/assets/images/project/lakshaya.webp"
 
 const Project = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -49,10 +53,9 @@ const Project = () => {
   const projects = [
     {
       id: 1,
-      title: "Podcast - Podcast Mobile App Solution",
-      subtitle: "Mobile App Solution",
-      tags: ["UI/UX Design", "App Design", "Wireframe"],
-      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-1.png",
+      title: "Resilient Grow - Share Market Institute",
+      tags: ["Website"],
+      image: resilientgrow,
       buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
       iconColor: "text-white",
       imagePosition: "object-left",
@@ -60,13 +63,13 @@ const Project = () => {
       reviews: 124,
       date: "May 2023",
       duration: "8 weeks",
+      link: "https://resilientgrow.in",
     },
     {
       id: 2,
-      title: "Podcast - Podcast Mobile",
-      subtitle: "Application Landing Page",
-      tags: ["Web Design", "Landing Page", "Wireframe"],
-      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-2.png",
+      title: "LTS - HR Management System",
+      tags: ["Web App"],
+      image: lts,
       buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
       iconColor: "text-white",
       imagePosition: "object-right",
@@ -74,13 +77,13 @@ const Project = () => {
       reviews: 98,
       date: "June 2023",
       duration: "6 weeks",
+      link: "https://lts-system.vercel.app",
     },
     {
       id: 3,
-      title: "Podcast - Podcast Mobile App Solution",
-      subtitle: "Mobile App Solution",
-      tags: ["UI/UX Design", "App Design", "Wireframe"],
-      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-3.png",
+      title: "Amcoderbits - Digital Marketing Agency",
+      tags: ["Website"],
+      image: amcoderbit,
       buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
       iconColor: "text-white",
       imagePosition: "object-left",
@@ -88,13 +91,13 @@ const Project = () => {
       reviews: 124,
       date: "May 2023",
       duration: "8 weeks",
+      link: "https://amcoderbits.com",
     },
     {
       id: 4,
-      title: "Podcast - Podcast Mobile",
-      subtitle: "Application Landing Page",
-      tags: ["Web Design", "Landing Page", "Wireframe"],
-      image: "https://themexriver.com/wp/agenriver/demo/assets/img/demo/demo-4.png",
+      title: "Lakshaya - Best Coaching Institute in Dhanbad",
+      tags: ["Website"],
+      image: lakshaya,
       buttonColor: "bg-gradient-to-br from-orange-400 to-orange-500",
       iconColor: "text-white",
       imagePosition: "object-right",
@@ -102,6 +105,7 @@ const Project = () => {
       reviews: 98,
       date: "June 2023",
       duration: "6 weeks",
+      link: "https://www.thelakshyadhanbad.com",
     },
   ];
 
@@ -138,9 +142,11 @@ const Project = () => {
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {projects.map((project, index) => (
-          <div
+          <a
             key={project.id}
-            className={`bg-violet-100 drop-shadow-lg rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
+            href={project.link}
+            target="_blank"
+            className={`bg-violet-100 cursor-none drop-shadow-lg rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
@@ -292,7 +298,7 @@ const Project = () => {
                   hoveredCard === project.id ? "scale(1)" : "scale(0.8)",
               }}
             ></div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

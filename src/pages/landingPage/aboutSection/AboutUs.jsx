@@ -46,7 +46,7 @@ export default function AboutUs() {
           {/* Years of Experience Box */}
         </div>
         <div className="absolute bottom-2 flex gap-3 w-fit left-0 bg-violet-500 text-black px-4 py-4 font-bold rounded-tl-xl rounded-br-3xl rounded-tr-3xl rounded-bl-xl">
-          <div className="text-3xl lg:text-6xl font-black w-max text-white">18</div>
+          <div className="text-3xl lg:text-6xl font-black w-max text-white">5</div>
           <div className="grid w-max">
             <span className="text-xl lg:text-4xl text-white">Years</span>{" "}
             <span className="text-sm text-white">of Experience</span>
