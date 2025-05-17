@@ -2,7 +2,7 @@ import { Play, ArrowRight, Check } from "lucide-react";
 
 export default function AboutUs() {
   return (
-    <div className="flex rounded-2xl !px-32 !py-32  -mb-10 flex-col lg:flex-row w-full min-h-screen bg-black text-white p-4 lg:p-16 relative z-10 ">
+    <div className="flex rounded-2xl px-5 sm:!px-32 !py-32  -mb-10 flex-col lg:flex-row w-full min-h-screen bg-black text-white p-4 lg:p-16 relative z-10 ">
       {/* SVG Definitions */}
       <svg className="absolute -top-[999px] -left-[999px] w-0 h-0">
         <defs>
