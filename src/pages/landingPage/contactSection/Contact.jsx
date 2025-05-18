@@ -57,15 +57,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="z-[100] relative bg-white px-5 md:px-6 py-20">
+    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl mx-10 -mb-10   -mt-16">
       <div className="container mx-auto max-w-7xl">
         {/* Header with green line */}
-        <div className="flex items-center mb-2">
-          <div className="w-8 h-0.5 bg-orange-500 mr-3"></div>
-          <span className="text-gray-600 font-medium">Contact Us</span>
+        <div className="flex items-center mb-5">
+        <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
+          Contact Us
+        </span>
+
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-end mt-4">
+        <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-start ">
           {/* Left side - Form */}
           <div className="w-full lg:w-7/12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-10 leading-tight">
@@ -283,67 +285,57 @@ export default function ContactSection() {
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">Address</h3>
                 <p className="text-white/80">
-                  4517 Washington Ave. Manchester,
-                  <br />
-                  Kentucky 39495
+                GroViaUs, 11th Floor, Bhutani City Center, Sector 32 NOIDA
                 </p>
               </div>
 
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">Contact</h3>
-                <p className="text-white/80 mb-1">Phone : +0123-456-789</p>
-                <p className="text-white/80">Email : example@gmail.com</p>
+                <p className="text-white/80 mb-1">Phone : +91 9310156995</p>
+                <p className="text-white/80">Email : ugroviaus@gmail.com</p>
               </div>
 
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">
                   Open Time
                 </h3>
-                <p className="text-white/80">Monday - Friday : 10:00 - 20:00</p>
+                <p className="text-white/80">Mon-Sat : 10:00-20:00</p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-4">Stay Connected</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">Stay Connected</h3>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/share/1G6o2mtM8U/"
                     className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Facebook size={20} color="black" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/groviaus?igsh=MWxqeDlINmF1OHJjNw=="
                     className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    <Twitter size={20} color="black" />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    <div className="w-5 h-5 flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="black"
-                      >
-                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.827 7.5c.597 0 1.078.48 1.078 1.078 0 .597-.48 1.078-1.078 1.078-.597 0-1.077-.48-1.077-1.078 0-.597.48-1.078 1.077-1.078zm-9.654 12.54c-.199.133-.445.146-.663.034-.242-.125-.33-.42-.205-.663l3.935-7.605c.124-.24.419-.328.662-.204.243.125.33.42.205.662l-3.934 7.776zm9.095-4.376c-.125.242-.42.33-.662.205l-7.934-4.105c-.243-.125-.33-.42-.206-.663.125-.242.42-.33.663-.205l7.934 4.105c.242.125.33.42.205.663z" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Instagram size={20} color="black" />
                   </a>
                   <a
-                    href="#"
+                    href="https://youtube.com/@groviaus?si=Cm8zVelHR6e4QoT4"
                     className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Youtube size={20} color="black" />
+                  </a>
+                  <a
+                    href="https://x.com/groviaus?t=GxE3uKq3FexQ43fEf-7nRw&s=09"
+                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter size={20} color="black" />
                   </a>
                 </div>
               </div>
