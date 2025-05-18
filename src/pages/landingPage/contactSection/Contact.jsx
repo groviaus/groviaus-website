@@ -283,68 +283,53 @@ export default function ContactSection() {
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">Address</h3>
                 <p className="text-white/80">
-                  4517 Washington Ave. Manchester,
+                  GroViaUs, 11th floor Bhutani City Center,
                   <br />
-                  Kentucky 39495
+                  Sector 32 NOIDA U.P
                 </p>
               </div>
 
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">Contact</h3>
-                <p className="text-white/80 mb-1">Phone : +0123-456-789</p>
-                <p className="text-white/80">Email : example@gmail.com</p>
+                <p className="text-white/80 mb-1">Phone : +91 9310156995</p>
+                <p className="text-white/80">Email : ugroviaus@gmail.com</p>
               </div>
 
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">
                   Open Time
                 </h3>
-                <p className="text-white/80">Monday - Friday : 10:00 - 20:00</p>
+                <p className="text-white/80">Monday - Saturday : 10:00 - 20:00</p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-4">Stay Connected</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">Stay Connected</h3>
                 <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    <Facebook size={20} color="black" />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    <Twitter size={20} color="black" />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    <div className="w-5 h-5 flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="black"
-                      >
-                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.827 7.5c.597 0 1.078.48 1.078 1.078 0 .597-.48 1.078-1.078 1.078-.597 0-1.077-.48-1.077-1.078 0-.597.48-1.078 1.077-1.078zm-9.654 12.54c-.199.133-.445.146-.663.034-.242-.125-.33-.42-.205-.663l3.935-7.605c.124-.24.419-.328.662-.204.243.125.33.42.205.662l-3.934 7.776zm9.095-4.376c-.125.242-.42.33-.662.205l-7.934-4.105c-.243-.125-.33-.42-.206-.663.125-.242.42-.33.663-.205l7.934 4.105c.242.125.33.42.205.663z" />
-                      </svg>
-                    </div>
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    <Instagram size={20} color="black" />
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    <Youtube size={20} color="black" />
-                  </a>
+                  {[
+                    { icon: <Facebook size={20} color="black" />, href: "https://www.facebook.com/groviaus" },
+                    { icon: <Twitter size={20} color="black" />, href: "https://x.com/groviaus" },
+                    // { 
+                    //   icon: (
+                    //     <div className="w-5 h-5 flex items-center justify-center">
+                    //       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="black">
+                    //         <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.827 7.5c.597 0 1.078.48 1.078 1.078 0 .597-.48 1.078-1.078 1.078-.597 0-1.077-.48-1.077-1.078 0-.597.48-1.078 1.077-1.078zm-9.654 12.54c-.199.133-.445.146-.663.034-.242-.125-.33-.42-.205-.663l3.935-7.605c.124-.24.419-.328.662-.204.243.125.33.42.205.662l-3.934 7.776zm9.095-4.376c-.125.242-.42.33-.662.205l-7.934-4.105c-.243-.125-.33-.42-.206-.663.125-.242.42-.33.663-.205l7.934 4.105c.242.125.33.42.205.663z" />
+                    //       </svg>
+                    //     </div>
+                    //   ),
+                    //   href: "#"
+                    // },
+                    { icon: <Instagram size={20} color="black" />, href: "https://www.instagram.com/groviaus/" },
+                    { icon: <Youtube size={20} color="black" />, href: "https://www.youtube.com/@groviaus" }
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      target="_blank"
+                      href={item.href}
+                      className="bg-white cursor-none rounded-full p-3 hover:bg-violet-100 transition-colors duration-300"
+                    >
+                      {item.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>

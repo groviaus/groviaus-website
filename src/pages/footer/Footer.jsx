@@ -19,13 +19,13 @@ export default function Footer() {
       <div className="relative z-10 flex-1 container max-w-7xl mx-auto px-6 sm:pt-20  sm:pb-10 flex flex-col justify-center">
         <div className="flex  justify-between items-start">
           <div className="max-w-3xl">
-            <h1 className="text-white text-3xl md:text-7xl font-bold tracking-wider leading-tight">
+            <h1 className="text-white mb-5 text-3xl md:text-7xl font-bold tracking-wider leading-tight">
               LET'S DISCUSS A<br />
               PROJECT TOGETHER
             </h1>
           </div>
 
-          <div>
+          <div className="hidden sm:block">
             <CircularText
               text="Groviaus*Digital*Marketing*"
               onHover="goBonkers"
@@ -47,48 +47,21 @@ export default function Footer() {
           </div>
 
           <div className="flex space-x-6 mb-6 md:mb-0">
-            <a
-              href="#"
-              className="text-white hover:text-violet transition-colors"
-            >
-              <Facebook size={20} />
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-violet transition-colors"
-            >
-              <Instagram size={20} />
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-violet transition-colors"
-            >
-              <Twitter size={20} />
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-violet transition-colors"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+            {[
+              { icon: <Facebook size={20} />, href: "https://www.facebook.com/groviaus" },
+              { icon: <Instagram size={20} />, href: "https://www.instagram.com/groviaus/" },
+              { icon: <Twitter size={20} />, href: "https://x.com/groviaus" },
+              { icon: <Youtube size={20} />, href: "https://www.youtube.com/@groviaus" }
+            ].map((item, i) => (
+              <a
+                key={i}
+                target="_blank"
+                href={item.href}
+                className="text-white hover:text-violet transition-colors"
               >
-                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" />
-                <path d="M12 16a4 4 0 0 1-4-4c0-1.1.9-2 2-2s2 .9 2 2c0 1.1.9 2 2 2s2-.9 2-2a4 4 0 0 0-4-4" />
-              </svg>
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-violet transition-colors"
-            >
-              <Youtube size={20} />
-            </a>
+                {item.icon}
+              </a>
+            ))}
           </div>
         </div>
 
