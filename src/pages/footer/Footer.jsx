@@ -70,7 +70,7 @@ export default function Footer() {
             <ul className="flex flex-wrap space-x-8">
               <li>
                 <a
-                  href="#home"
+                  // href="#home"
                   className="text-white hover:text-violet transition-colors"
                   onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
