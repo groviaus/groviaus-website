@@ -144,7 +144,7 @@ const Project = () => {
             key={project.id}
             href={project.link}
             target="_blank"
-            className={`bg-violet-100 cursor-none drop-shadow-lg rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
+            className={`bg-violet-100 cursor-none drop-shadow-lg rounded-xl sm:rounded-3xl overflow-hidden relative transition-all duration-700 ease-out group card-3d-container ${
               isVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-20"
@@ -167,7 +167,7 @@ const Project = () => {
             onMouseLeave={() => setHoveredCard(null)}
             onMouseMove={(e) => handleMouseMove(e, project.id)}
           >
-            <div className="relative sm:p-5 sm:pt-4 pb-0 md:h-[380px] rounded-t-3xl overflow-hidden">
+            <div className="relative sm:p-5 sm:pt-4 pb-0 md:h-[380px] rounded-t-xl sm:rounded-t-3xl overflow-hidden">
               <div
                 className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
@@ -180,7 +180,7 @@ const Project = () => {
               <img
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
-                className="w-full h-full rounded-t-2xl object-cover object-top transition-transform duration-1000 ease-out"
+                className="w-full h-full rounded-t-lg sm:rounded-t-2xl object-cover object-top transition-transform duration-1000 ease-out"
                 style={{
                   transform:
                     hoveredCard === project.id ? "scale(1.08)" : "scale(1)",
