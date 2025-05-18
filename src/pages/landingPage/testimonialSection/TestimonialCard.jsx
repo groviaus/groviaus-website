@@ -12,7 +12,7 @@ const TestimonialCard = ({ rating, text, name, role, avatarSrc }) => {
         </div>
   
         {/* Testimonial text */}
-        <p className="text-gray-300 mb-6 flex-grow text-sm sm:text-base ">{text}</p>
+        <p className="text-gray-300 sm:mb-6 flex-grow text-sm sm:text-base ">{text}</p>
   
         {/* Divider */}
         <div className="border-t border-zinc-700 my-4"></div>
@@ -22,7 +22,7 @@ const TestimonialCard = ({ rating, text, name, role, avatarSrc }) => {
           <div className="hidden sm:block w-10 h-10 rounded-full overflow-hidden">
             <img src={ "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/diverse-group-zWYqC8IDf1vB2UcLXHZJNFY5ssQWG2.png"} alt={`Avatar of ${name}`} className="w-full h-full object-cover" />
           </div>
-          <div className="ml-3">
+          <div className="sm:ml-3">
             <p className="font-medium text-white">{name}</p>
             <p className="text-sm text-gray-400">{role}</p>
           </div>
