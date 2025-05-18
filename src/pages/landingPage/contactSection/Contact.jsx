@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import img from "@/assets/images/footer/footerBg.jpg";
 import CircularText from "../../../../yes/CircularText/CircularText";
+import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -28,9 +29,18 @@ export default function ContactSection() {
     message: false,
   });
 
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (formErrors[name]) {
+      setFormErrors((prevErrors) => ({ ...prevErrors, [name]: null }));
+    }
+    if (formErrors.submit) {
+      setFormErrors((prevErrors) => ({ ...prevErrors, submit: null }));
+    }
   };
 
   const handleFocus = (field) => {
@@ -41,19 +51,105 @@ export default function ContactSection() {
     setIsFocused((prev) => ({ ...prev, [field]: false }));
   };
 
+  const validateForm = () => {
+    const errors = {};
+    let isValid = true;
+
+    if (!formData.firstName.trim()) {
+      errors.firstName = "First name is required.";
+      isValid = false;
+    }
+    if (!formData.lastName.trim()) {
+      errors.lastName = "Last name is required.";
+      isValid = false;
+    }
+    if (!formData.email.trim()) {
+      errors.email = "Email is required.";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      errors.email = "Email address is invalid.";
+      isValid = false;
+    }
+    if (!formData.phone.trim()) {
+      errors.phone = "Phone number is required.";
+      isValid = false;
+    } else {
+      const cleanedPhone = formData.phone.replace(/^(?:\+91|91|0)?/, "");
+      if (!/^[6-9]\d{9}$/.test(cleanedPhone)) {
+        errors.phone =
+          "Phone number must be 10 digits and start with 6, 7, 8, or 9 (country code will be ignored if present).";
+        isValid = false;
+      }
+    }
+    if (!formData.subject.trim()) {
+      errors.subject = "Subject is required.";
+      isValid = false;
+    }
+    if (!formData.message.trim()) {
+      errors.message = "Message is required.";
+      isValid = false;
+    }
+
+    setFormErrors(errors);
+    return isValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    if (validateForm()) {
+      setIsSubmitting(true);
+      setFormErrors({});
+
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Groviaus Team",
+      };
+
+      const SERVICE_ID = "service_t7e5pmv";
+      const TEMPLATE_ID = "template_z40r1ij";
+      const PUBLIC_KEY = "3Q4Mq67c0i4Gp_GML";
+
+      emailjs
+        .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+        .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message sent successfully!");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+          setIsFocused({
+            firstName: false,
+            lastName: false,
+            email: false,
+            phone: false,
+            subject: false,
+            message: false,
+          });
+        })
+        .catch((err) => {
+          console.error("FAILED...", err);
+          setFormErrors({
+            submit: "Failed to send message. Please try again.",
+          });
+          alert("Failed to send message. Please try again later.");
+        })
+        .finally(() => {
+          setIsSubmitting(false);
+        });
+    } else {
+      console.log("Form validation failed");
+    }
   };
 
   return (
@@ -61,10 +157,9 @@ export default function ContactSection() {
       <div className="container mx-auto max-w-7xl">
         {/* Header with green line */}
         <div className="flex items-center mb-5">
-        <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
-          Contact Us
-        </span>
-
+          <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
+            Contact Us
+          </span>
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-start ">
@@ -76,7 +171,7 @@ export default function ContactSection() {
               Something Great
             </h1>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} noValidate>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                 <div className="relative">
                   <input
@@ -87,8 +182,9 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("firstName")}
                     onBlur={() => handleBlur("firstName")}
-                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
-                    required
+                    className={`w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500 ${
+                      formErrors.firstName ? "ring-2 ring-red-500" : ""
+                    }`}
                   />
                   <label
                     htmlFor="firstName"
@@ -96,10 +192,15 @@ export default function ContactSection() {
                       formData.firstName || isFocused.firstName
                         ? "text-xs text-gray-500 -top-2.5 bg-white px-1"
                         : "text-gray-500 top-4"
-                    }`}
+                    } ${formErrors.firstName ? "text-red-600" : ""}`}
                   >
                     First Name *
                   </label>
+                  {formErrors.firstName && (
+                    <p className="text-red-500 text-xs mt-1 px-1">
+                      {formErrors.firstName}
+                    </p>
+                  )}
                 </div>
                 <div className="relative">
                   <input
@@ -110,8 +211,9 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("lastName")}
                     onBlur={() => handleBlur("lastName")}
-                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
-                    required
+                    className={`w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500 ${
+                      formErrors.lastName ? "ring-2 ring-red-500" : ""
+                    }`}
                   />
                   <label
                     htmlFor="lastName"
@@ -119,10 +221,15 @@ export default function ContactSection() {
                       formData.lastName || isFocused.lastName
                         ? "text-xs text-gray-500 -top-2.5 bg-white px-1"
                         : "text-gray-500 top-4"
-                    }`}
+                    } ${formErrors.lastName ? "text-red-600" : ""}`}
                   >
                     Last Name *
                   </label>
+                  {formErrors.lastName && (
+                    <p className="text-red-500 text-xs mt-1 px-1">
+                      {formErrors.lastName}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -136,8 +243,9 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("email")}
                     onBlur={() => handleBlur("email")}
-                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
-                    required
+                    className={`w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500 ${
+                      formErrors.email ? "ring-2 ring-red-500" : ""
+                    }`}
                   />
                   <label
                     htmlFor="email"
@@ -145,10 +253,15 @@ export default function ContactSection() {
                       formData.email || isFocused.email
                         ? "text-xs text-gray-500 -top-2.5 bg-white px-1"
                         : "text-gray-500 top-4"
-                    }`}
+                    } ${formErrors.email ? "text-red-600" : ""}`}
                   >
                     Email *
                   </label>
+                  {formErrors.email && (
+                    <p className="text-red-500 text-xs mt-1 px-1">
+                      {formErrors.email}
+                    </p>
+                  )}
                 </div>
                 <div className="relative">
                   <input
@@ -159,8 +272,9 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("phone")}
                     onBlur={() => handleBlur("phone")}
-                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
-                    required
+                    className={`w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500 ${
+                      formErrors.phone ? "ring-2 ring-red-500" : ""
+                    }`}
                   />
                   <label
                     htmlFor="phone"
@@ -168,10 +282,15 @@ export default function ContactSection() {
                       formData.phone || isFocused.phone
                         ? "text-xs text-gray-500 -top-2.5 bg-white px-1"
                         : "text-gray-500 top-4"
-                    }`}
+                    } ${formErrors.phone ? "text-red-600" : ""}`}
                   >
                     Phone Number *
                   </label>
+                  {formErrors.phone && (
+                    <p className="text-red-500 text-xs mt-1 px-1">
+                      {formErrors.phone}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -184,8 +303,9 @@ export default function ContactSection() {
                   onChange={handleChange}
                   onFocus={() => handleFocus("subject")}
                   onBlur={() => handleBlur("subject")}
-                  className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
-                  required
+                  className={`w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500 ${
+                    formErrors.subject ? "ring-2 ring-red-500" : ""
+                  }`}
                 />
                 <label
                   htmlFor="subject"
@@ -193,10 +313,15 @@ export default function ContactSection() {
                     formData.subject || isFocused.subject
                       ? "text-xs text-gray-500 -top-2.5 bg-white px-1"
                       : "text-gray-500 top-4"
-                  }`}
+                  } ${formErrors.subject ? "text-red-600" : ""}`}
                 >
                   Subject *
                 </label>
+                {formErrors.subject && (
+                  <p className="text-red-500 text-xs mt-1 px-1">
+                    {formErrors.subject}
+                  </p>
+                )}
               </div>
 
               <div className="mb-8 relative">
@@ -207,8 +332,9 @@ export default function ContactSection() {
                   onChange={handleChange}
                   onFocus={() => handleFocus("message")}
                   onBlur={() => handleBlur("message")}
-                  className="w-full p-4 bg-gray-50 shadow-md rounded-md h-48 resize-none outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
-                  required
+                  className={`w-full p-4 bg-gray-50 shadow-md rounded-md h-48 resize-none outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500 ${
+                    formErrors.message ? "ring-2 ring-red-500" : ""
+                  }`}
                 ></textarea>
                 <label
                   htmlFor="message"
@@ -216,23 +342,36 @@ export default function ContactSection() {
                     formData.message || isFocused.message
                       ? "text-xs text-gray-500 -top-2.5 bg-white px-1"
                       : "text-gray-500 top-4"
-                  }`}
+                  } ${formErrors.message ? "text-red-600" : ""}`}
                 >
                   Message *
                 </label>
+                {formErrors.message && (
+                  <p className="text-red-500 text-xs mt-1 px-1">
+                    {formErrors.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex items-center">
                 <button
                   type="submit"
-                  className="bg-orange-500 text-black font-medium py-2 pl-8 pr-2 rounded-full flex items-center transition-all duration-300 hover:bg-orange-600 group"
+                  disabled={isSubmitting}
+                  className="bg-orange-500 text-black font-medium py-2 pl-8 pr-2 rounded-full flex items-center transition-all duration-300 hover:bg-orange-600 group disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  Send Message
-                  <div className="ml-4 bg-black rounded-full p-2 group-hover:bg-gray-800 transition-all duration-300">
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                  <div
+                    className={`ml-4 bg-black rounded-full p-2 ${
+                      isSubmitting ? "" : "group-hover:bg-gray-800"
+                    } transition-all duration-300`}
+                  >
                     <ArrowRight size={16} color="white" />
                   </div>
                 </button>
               </div>
+              {formErrors.submit && (
+                <p className="text-red-500 text-sm mt-4">{formErrors.submit}</p>
+              )}
             </form>
           </div>
 
@@ -285,7 +424,7 @@ export default function ContactSection() {
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">Address</h3>
                 <p className="text-white/80">
-                GroViaUs, 11th Floor, Bhutani City Center, Sector 32 NOIDA
+                  GroViaUs, 11th Floor, Bhutani City Center, Sector 32 NOIDA
                 </p>
               </div>
 
@@ -303,7 +442,9 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-white">Stay Connected</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  Stay Connected
+                </h3>
                 <div className="flex space-x-4">
                   <a
                     href="https://www.facebook.com/share/1G6o2mtM8U/"
