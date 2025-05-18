@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import {
   ArrowUpRight,
@@ -169,7 +167,7 @@ const Project = () => {
             onMouseLeave={() => setHoveredCard(null)}
             onMouseMove={(e) => handleMouseMove(e, project.id)}
           >
-            <div className="relative p-5 pt-4 pb-0 h-[380px] rounded-t-3xl overflow-hidden">
+            <div className="relative sm:p-5 sm:pt-4 pb-0 sm:h-[380px] rounded-t-3xl overflow-hidden">
               <div
                 className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
@@ -228,7 +226,7 @@ const Project = () => {
 
               <div className="space-y-2 mb-4">
                 <h3
-                  className="text-2xl md:text-3xl font-bold text-violet-900 tracking-tight transition-transform duration-500 ease-out"
+                  className="text-lg sm:text-2xl md:text-3xl font-bold text-violet-900 tracking-tight transition-transform duration-500 ease-out"
                   style={{
                     transform:
                       hoveredCard === project.id
