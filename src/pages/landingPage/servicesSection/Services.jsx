@@ -147,12 +147,12 @@ const Services = () => {
       <div className="grid sm:grid-cols-3 grid-cols-1 pt-10 items-center justify-center gap-6 px-5 sm:px-10">
         {/* First column with title and first card */}
         <div className="sm:row-span-2 row-span-1 grid items-center justify-center gap-6 sm:gap-10 md:static sticky top-5">
-          <div className="sm:ml- w-full">
+          <div className="sm:ml-">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-violet-200 text-5xl sm:text-[100px] flex items-center ml-8 sm:ml-0 justify-center text-center gap-2 font-medium "
+              className="text-violet-200 text-5xl sm:text-[80px] flex items-center ml-8 sm:ml-0    text-center sm:text-left gap-2 font-medium "
             >
               Services{" "}
               <CircleandCursor
