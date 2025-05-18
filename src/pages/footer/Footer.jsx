@@ -72,6 +72,10 @@ export default function Footer() {
                 <a
                   href="#home"
                   className="text-white hover:text-violet transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   Home
                 </a>
@@ -80,6 +84,10 @@ export default function Footer() {
                 <a
                   href="#work"
                   className="text-white hover:text-violet transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#work').scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   Work
                 </a>
@@ -97,6 +105,10 @@ export default function Footer() {
                 <a
                   href="#contact"
                   className="text-white hover:text-violet transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   Contact
                 </a>
@@ -113,7 +125,12 @@ export default function Footer() {
 
       {/* Floating action button */}
       <div className="fixed bottom-6 right-6 z-20">
-        <button className="w-14 h-14 rounded-full bg-violet-400 flex items-center justify-center shadow-lg transition-colors animate-bounce">
+        <button 
+          className="w-14 h-14 rounded-full bg-violet-400 flex items-center justify-center shadow-lg transition-colors animate-bounce"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           <ArrowBigUp className="stroke-white fill-white " size={35} />
         </button>
       </div>
