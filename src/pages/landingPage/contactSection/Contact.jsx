@@ -57,15 +57,17 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="z-[100] relative bg-white px-5 md:px-6 py-20">
+    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl mx-10 -mb-10   -mt-16">
       <div className="container mx-auto max-w-7xl">
         {/* Header with green line */}
-        <div className="flex items-center mb-2">
-          <div className="w-8 h-0.5 bg-orange-500 mr-3"></div>
-          <span className="text-gray-600 font-medium">Contact Us</span>
+        <div className="flex items-center mb-5">
+        <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
+          Contact Us
+        </span>
+
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-end mt-4">
+        <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-start ">
           {/* Left side - Form */}
           <div className="w-full lg:w-7/12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-10 leading-tight">
@@ -291,6 +293,8 @@ export default function ContactSection() {
 
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">Contact</h3>
+                <p className="text-white/80 mb-1">Phone : +91 9310156995</p>
+                <p className="text-white/80">Email : ugroviaus@gmail.com</p>
                 <p className="text-white/80 mb-1">Phone : +91 9310156995</p>
                 <p className="text-white/80">Email : ugroviaus@gmail.com</p>
               </div>

@@ -4,7 +4,7 @@ import CircularText from "../../../yes/CircularText/CircularText";
 import img from "@/assets/images/footer/footerBg.jpg";
 export default function Footer() {
   return (
-    <div className="sm:min-h-screen flex py-10 flex-col justify-between relative overflow-hidden z-[99] rounded-t-3xl">
+    <div className="sm:min-h-screen flex py-10 flex-col justify-between relative overflow-hidden z-[110] rounded-t-3xl">
       {/* Textured background overlay */}
       <div
         className="absolute inset-0 z-10 "
