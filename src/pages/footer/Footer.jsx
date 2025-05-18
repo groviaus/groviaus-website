@@ -72,9 +72,8 @@ export default function Footer() {
                 <a
                   href="#home"
                   className="text-white hover:text-violet transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 >
                   Home
