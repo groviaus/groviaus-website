@@ -147,7 +147,7 @@ const Services = () => {
       <div className="grid sm:grid-cols-3 grid-cols-1 pt-10 items-center justify-center gap-6 px-5 sm:px-10">
         {/* First column with title and first card */}
         <div className="sm:row-span-2 row-span-1 grid items-center justify-center gap-6 sm:gap-10 md:static sticky top-5">
-          <div className="sm:ml-7">
+          <div className="sm:ml- w-full">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
