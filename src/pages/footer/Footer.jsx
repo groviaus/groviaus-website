@@ -70,33 +70,44 @@ export default function Footer() {
             <ul className="flex flex-wrap space-x-8">
               <li>
                 <a
-                  href="#"
+                  // href="#home"
                   className="text-white hover:text-violet transition-colors"
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                 >
                   Home
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#work"
                   className="text-white hover:text-violet transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#work').scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
-                  Portfolio
+                  Work
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   className="text-white hover:text-violet transition-colors"
                 >
                   Blog
                 </a>
-              </li>
+              </li> */}
               
               <li>
                 <a
-                  href="#"
+                  href="#contact"
                   className="text-white hover:text-violet transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+                  }}
                 >
                   Contact
                 </a>

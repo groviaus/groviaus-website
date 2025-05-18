@@ -457,7 +457,7 @@ export default function ContactSection() {
                       key={i}
                       target="_blank"
                       href={item.href}
-                      className="bg-white cursor-none rounded-full p-3 hover:bg-violet-100 transition-all duration-300 group-hover:rotate-[360deg] group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white "
+                      className="bg-white cursor-none rounded-full p-3 transition-all duration-300 group-hover:rotate-[360deg] group-hover:scale-110 hover:bg-orange-500 hover:text-white"
                     >
                       {item.icon}
                     </a>
