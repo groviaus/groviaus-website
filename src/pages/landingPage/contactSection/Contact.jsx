@@ -421,20 +421,20 @@ export default function ContactSection() {
                 <div className="flex space-x-4">
                   {[
                     {
-                      icon: <Facebook size={20}  className="group-hover:text-white" />,
+                      icon: <Facebook size={20} />,
                       href: "https://www.facebook.com/groviaus",
                     },
                     {
-                      icon: <Twitter size={20}  className="group-hover:text-white" />,
+                      icon: <Twitter size={20} />,
                       href: "https://x.com/groviaus",
                     },
                
                     {
-                      icon: <Instagram size={20}  className="group-hover:text-white" />,
+                      icon: <Instagram size={20} />,
                       href: "https://www.instagram.com/groviaus/",
                     },
                     {
-                      icon: <Youtube size={20}  className="group-hover:text-white" />,
+                      icon: <Youtube size={20} />,
                       href: "https://www.youtube.com/@groviaus",
                     },
                   ].map((item, i) => (
@@ -442,7 +442,7 @@ export default function ContactSection() {
                       key={i}
                       target="_blank"
                       href={item.href}
-                      className="bg-white cursor-none rounded-full p-3 hover:bg-violet-100 transition-all duration-300 group-hover:rotate-[360deg] group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white "
+                      className="bg-white cursor-none rounded-full p-3 transition-all duration-300 group-hover:rotate-[360deg] group-hover:scale-110 hover:bg-orange-500 hover:text-white"
                     >
                       {item.icon}
                     </a>
