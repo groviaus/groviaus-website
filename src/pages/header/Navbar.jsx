@@ -18,13 +18,13 @@ export default function Navbar() {
       {/* Desktop Navigation */}
       <div className="hidden sm:flex items-center gap-10">
         <Link
-          to="#"
+          to="#home"
           className="text-gray-800 hover:text-gray-600 text-sm font-medium tracking-wide"
         >
           Home
         </Link>
         <Link
-          to="#"
+          to="#work"
           className="text-gray-800 hover:text-gray-600 text-sm font-medium tracking-wide"
         >
           Work
@@ -49,10 +49,10 @@ export default function Navbar() {
 
       {/* Contact Link - Desktop */}
       <Link
-        to="/contact"
+        to="#contact"
         className="hidden sm:block text-gray-800 hover:text-gray-600 text-sm font-medium tracking-wide"
       >
-        Contact with us
+        Contact Us
       </Link>
 
       {/* Mobile Menu */}

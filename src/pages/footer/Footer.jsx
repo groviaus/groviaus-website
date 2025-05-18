@@ -70,7 +70,7 @@ export default function Footer() {
             <ul className="flex flex-wrap space-x-8">
               <li>
                 <a
-                  href="#"
+                  href="#home"
                   className="text-white hover:text-violet transition-colors"
                 >
                   Home
@@ -78,24 +78,24 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="#work"
                   className="text-white hover:text-violet transition-colors"
                 >
-                  Portfolio
+                  Work
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   className="text-white hover:text-violet transition-colors"
                 >
                   Blog
                 </a>
-              </li>
+              </li> */}
               
               <li>
                 <a
-                  href="#"
+                  href="#contact"
                   className="text-white hover:text-violet transition-colors"
                 >
                   Contact

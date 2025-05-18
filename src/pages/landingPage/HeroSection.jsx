@@ -3,7 +3,7 @@ import Hero from "../hero/Hero";
 // import { SmoothCursor } from "@/components/ui/smooth-cursor";
 export default function HeroSection() {
   return (
-    <div className="sm:min-h-screen sticky top-0 bg-white bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover  z-10 ">
+    <div id="home" className="sm:min-h-screen sticky top-0 bg-white bg-[url('https://pagedone.io/asset/uploads/1691055810.png')] bg-center bg-cover  z-10 ">
       {/* Main container with grid lines */}
       <div className="mx-auto px-4 sm:px-6 relative">
         <div className="absolute inset-0 hidden sm:grid grid-cols-12 gap-4">
