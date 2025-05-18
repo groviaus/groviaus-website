@@ -153,13 +153,14 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl mx-10 -mb-10   -mt-16">
+    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl  sm:mx-5 -mb-10 -mt-16">
       <div className="container mx-auto max-w-7xl">
         {/* Header with green line */}
         <div className="flex items-center mb-5">
           <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
             Contact Us
           </span>
+          
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-start ">
@@ -432,13 +433,17 @@ export default function ContactSection() {
                 <h3 className="text-2xl text-white font-bold mb-3">Contact</h3>
                 <p className="text-white/80 mb-1">Phone : +91 9310156995</p>
                 <p className="text-white/80">Email : ugroviaus@gmail.com</p>
+                <p className="text-white/80 mb-1">Phone : +91 9310156995</p>
+                <p className="text-white/80">Email : ugroviaus@gmail.com</p>
               </div>
 
               <div className="mb-10">
                 <h3 className="text-2xl text-white font-bold mb-3">
                   Open Time
                 </h3>
-                <p className="text-white/80">Mon-Sat : 10:00-20:00</p>
+                <p className="text-white/80">
+                  Monday - Saturday : 10:00 - 20:00
+                </p>
               </div>
 
               <div>
@@ -446,38 +451,43 @@ export default function ContactSection() {
                   Stay Connected
                 </h3>
                 <div className="flex space-x-4">
-                  <a
-                    href="https://www.facebook.com/share/1G6o2mtM8U/"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Facebook size={20} color="black" />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/groviaus?igsh=MWxqeDlINmF1OHJjNw=="
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Instagram size={20} color="black" />
-                  </a>
-                  <a
-                    href="https://youtube.com/@groviaus?si=Cm8zVelHR6e4QoT4"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Youtube size={20} color="black" />
-                  </a>
-                  <a
-                    href="https://x.com/groviaus?t=GxE3uKq3FexQ43fEf-7nRw&s=09"
-                    className="bg-white rounded-full p-3 hover:bg-gray-800 transition-colors duration-300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Twitter size={20} color="black" />
-                  </a>
+                  {[
+                    {
+                      icon: <Facebook size={20} color="black" />,
+                      href: "https://www.facebook.com/groviaus",
+                    },
+                    {
+                      icon: <Twitter size={20} color="black" />,
+                      href: "https://x.com/groviaus",
+                    },
+                    // {
+                    //   icon: (
+                    //     <div className="w-5 h-5 flex items-center justify-center">
+                    //       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="black">
+                    //         <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.827 7.5c.597 0 1.078.48 1.078 1.078 0 .597-.48 1.078-1.078 1.078-.597 0-1.077-.48-1.077-1.078 0-.597.48-1.078 1.077-1.078zm-9.654 12.54c-.199.133-.445.146-.663.034-.242-.125-.33-.42-.205-.663l3.935-7.605c.124-.24.419-.328.662-.204.243.125.33.42.205.662l-3.934 7.776zm9.095-4.376c-.125.242-.42.33-.662.205l-7.934-4.105c-.243-.125-.33-.42-.206-.663.125-.242.42-.33.663-.205l7.934 4.105c.242.125.33.42.205.663z" />
+                    //       </svg>
+                    //     </div>
+                    //   ),
+                    //   href: "#"
+                    // },
+                    {
+                      icon: <Instagram size={20} color="black" />,
+                      href: "https://www.instagram.com/groviaus/",
+                    },
+                    {
+                      icon: <Youtube size={20} color="black" />,
+                      href: "https://www.youtube.com/@groviaus",
+                    },
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      target="_blank"
+                      href={item.href}
+                      className="bg-white cursor-none rounded-full p-3 hover:bg-violet-100 transition-colors duration-300"
+                    >
+                      {item.icon}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
