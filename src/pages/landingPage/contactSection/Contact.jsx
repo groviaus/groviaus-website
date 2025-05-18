@@ -57,14 +57,13 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl mx-10 -mb-10   -mt-16">
+    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl  sm:mx-10 -mb-10 -mt-16">
       <div className="container mx-auto max-w-7xl">
         {/* Header with green line */}
         <div className="flex items-center mb-5">
-        <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
-          Contact Us
-        </span>
-
+          <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
+            Contact Us
+          </span>
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-start ">
@@ -303,16 +302,26 @@ export default function ContactSection() {
                 <h3 className="text-2xl text-white font-bold mb-3">
                   Open Time
                 </h3>
-                <p className="text-white/80">Monday - Saturday : 10:00 - 20:00</p>
+                <p className="text-white/80">
+                  Monday - Saturday : 10:00 - 20:00
+                </p>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-white mb-4">Stay Connected</h3>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Stay Connected
+                </h3>
                 <div className="flex space-x-4">
                   {[
-                    { icon: <Facebook size={20} color="black" />, href: "https://www.facebook.com/groviaus" },
-                    { icon: <Twitter size={20} color="black" />, href: "https://x.com/groviaus" },
-                    // { 
+                    {
+                      icon: <Facebook size={20} color="black" />,
+                      href: "https://www.facebook.com/groviaus",
+                    },
+                    {
+                      icon: <Twitter size={20} color="black" />,
+                      href: "https://x.com/groviaus",
+                    },
+                    // {
                     //   icon: (
                     //     <div className="w-5 h-5 flex items-center justify-center">
                     //       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="black">
@@ -322,8 +331,14 @@ export default function ContactSection() {
                     //   ),
                     //   href: "#"
                     // },
-                    { icon: <Instagram size={20} color="black" />, href: "https://www.instagram.com/groviaus/" },
-                    { icon: <Youtube size={20} color="black" />, href: "https://www.youtube.com/@groviaus" }
+                    {
+                      icon: <Instagram size={20} color="black" />,
+                      href: "https://www.instagram.com/groviaus/",
+                    },
+                    {
+                      icon: <Youtube size={20} color="black" />,
+                      href: "https://www.youtube.com/@groviaus",
+                    },
                   ].map((item, i) => (
                     <a
                       key={i}
