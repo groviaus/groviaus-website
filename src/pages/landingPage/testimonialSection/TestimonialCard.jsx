@@ -19,7 +19,7 @@ const TestimonialCard = ({ rating, text, name, role, avatarSrc }) => {
   
         {/* User info */}
         <div className="flex sm:flex-row flex-col sm:items-center">
-          <div className="hidden sm:block w-10 h-10 rounded-full overflow-hidden">
+          <div className="hidden sm:block min-w-10 min-h-10 w-10 h-10 rounded-full overflow-hidden">
             <img src={ "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/diverse-group-zWYqC8IDf1vB2UcLXHZJNFY5ssQWG2.png"} alt={`Avatar of ${name}`} className="w-full h-full object-cover" />
           </div>
           <div className="sm:ml-3">
