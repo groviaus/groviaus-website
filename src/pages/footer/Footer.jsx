@@ -112,8 +112,8 @@ export default function Footer() {
       </div>
 
       {/* Floating action button */}
-      <div className="fixed bottom-6 right-6 z-20">
-        <button className="w-14 h-14 rounded-full bg-violet-400 flex items-center justify-center shadow-lg transition-colors animate-bounce">
+      <div className="fixed bottom-6 right-6 z-20 cursor-none" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <button className="w-14 h-14 rounded-full bg-violet-400 flex items-center justify-center shadow-lg cursor-none transition-colors animate-bounce">
           <ArrowBigUp className="stroke-white fill-white " size={35} />
         </button>
       </div>

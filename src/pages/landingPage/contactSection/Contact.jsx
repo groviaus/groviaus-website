@@ -9,7 +9,7 @@ import {
 import img from "@/assets/images/footer/footerBg.jpg";
 import CircularText from "../../../../yes/CircularText/CircularText";
 import emailjs from "@emailjs/browser";
-
+import Magnet from "../../../../yes/Magnet/Magnet";
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -154,13 +154,12 @@ export default function ContactSection() {
 
   return (
     <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl  sm:mx-5 -mb-10 -mt-16">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-7xl" id="contact-section">
         {/* Header with green line */}
         <div className="flex items-center mb-5">
           <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-orange-300 to-orange-500 rounded-full text-sm font-medium shadow-sm    animate-shimmer text-white w-fit">
             Contact Us
           </span>
-          
         </div>
 
         <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-start ">
@@ -354,22 +353,24 @@ export default function ContactSection() {
                 )}
               </div>
 
-              <div className="flex items-center">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-orange-500 text-black font-medium py-2 pl-8 pr-2 rounded-full flex items-center transition-all duration-300 hover:bg-orange-600 group disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                  <div
-                    className={`ml-4 bg-black rounded-full p-2 ${
-                      isSubmitting ? "" : "group-hover:bg-gray-800"
-                    } transition-all duration-300`}
+              <Magnet padding={100} disabled={false} magnetStrength={2}>
+                <div className="flex items-center">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-orange-500 text-black font-medium py-2 pl-8 pr-2 rounded-full flex items-center transition-all duration-300 hover:bg-orange-600 group disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <ArrowRight size={16} color="white" />
-                  </div>
-                </button>
-              </div>
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                    <div
+                      className={`ml-4 bg-black rounded-full p-2 ${
+                        isSubmitting ? "" : "group-hover:bg-gray-800"
+                      } transition-all duration-300`}
+                    >
+                      <ArrowRight size={16} color="white" />
+                    </div>
+                  </button>
+                </div>
+              </Magnet>
               {formErrors.submit && (
                 <p className="text-red-500 text-sm mt-4">{formErrors.submit}</p>
               )}
@@ -379,7 +380,7 @@ export default function ContactSection() {
           {/* Right side - Contact Info */}
           <div className="w-full lg:w-5/12 relative group">
             {/* Hire Us Badge */}
-           
+
             <div className="hidden md:block -mt-10">
               <CircularText
                 text="Groviaus*Digital*Marketing*"
@@ -421,20 +422,34 @@ export default function ContactSection() {
                 <div className="flex space-x-4">
                   {[
                     {
-                      icon: <Facebook size={20}  className="group-hover:text-white" />,
+                      icon: (
+                        <Facebook
+                          size={20}
+                          className="group-hover:text-white"
+                        />
+                      ),
                       href: "https://www.facebook.com/groviaus",
                     },
                     {
-                      icon: <Twitter size={20}  className="group-hover:text-white" />,
+                      icon: (
+                        <Twitter size={20} className="group-hover:text-white" />
+                      ),
                       href: "https://x.com/groviaus",
                     },
-               
+
                     {
-                      icon: <Instagram size={20}  className="group-hover:text-white" />,
+                      icon: (
+                        <Instagram
+                          size={20}
+                          className="group-hover:text-white"
+                        />
+                      ),
                       href: "https://www.instagram.com/groviaus/",
                     },
                     {
-                      icon: <Youtube size={20}  className="group-hover:text-white" />,
+                      icon: (
+                        <Youtube size={20} className="group-hover:text-white" />
+                      ),
                       href: "https://www.youtube.com/@groviaus",
                     },
                   ].map((item, i) => (

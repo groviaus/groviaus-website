@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import GrowthWord from "../../components/GrowthWord";
-import {Mouse, Circle, MousePointer2, TrendingUp } from 'lucide-react';
+import { Mouse, Circle, MousePointer2, TrendingUp } from "lucide-react";
 import CircleandCursor from "@/components/CircleandCursor";
+import Magnet from "../../../yes/Magnet/Magnet";
 export default function Hero() {
   return (
     <main className="relative mt-12 sm:mt-24 pb-16  sm:mb-28 px-4 sm:px-0 ">
@@ -26,9 +27,9 @@ export default function Hero() {
 
         <div className="flex items-center justify-center gap-1 sm:gap-2 -mt-2 mb-4">
           <CircleandCursor className="animate-float" />
-        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight mb-4 sm:mb-6">
-          of your busines
-        </h1>
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight mb-4 sm:mb-6">
+            of your busines
+          </h1>
         </div>
 
         <p className="text-gray-700 mb-2 text-base sm:text-lg leading-relaxed">
@@ -38,20 +39,23 @@ export default function Hero() {
           We focus on good communication and understanding your business
         </p>
 
-        <div className="flex flex-row mx-auto  w-full justify-center items-center gap-4 sm:gap-7">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide flex items-center justify-center cursor-none">
-            Grow your business
-            <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 ml-2 mt-1" />
-          </button>
-          {/* <button
+        <Magnet padding={100} disabled={false} magnetStrength={3}>
+          <a href="#contact-section" className="cursor-none" >
+            <div className="flex flex-row mx-auto  w-full justify-center items-center gap-4 sm:gap-7">
+            <button className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide flex items-center justify-center cursor-none">
+              Grow your business
+              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 ml-2 mt-1" />
+            </button>
+            {/* <button
             to="#"
             className="bg-slate-50 hover:bg-white text-slate-800 border border-slate-800 hover:border-slate-700 font-medium px-6 sm:px-8 py-2.5 sm:py-3.5 rounded-full transition text-sm tracking-wide"
           >
             More about us
           </button> */}
-        </div>
+          </div>
+          </a>
+        </Magnet>
       </div>
-
 
       {/* Transform badge
       <div className="hidden sm:block absolute bottom-0 right-0 w-24 h-24 sm:w-32 sm:h-32">
@@ -83,5 +87,3 @@ export default function Hero() {
     </main>
   );
 }
-
-
