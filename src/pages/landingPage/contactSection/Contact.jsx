@@ -57,15 +57,15 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="z-[100] relative bg-white px-4 py-20">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+    <section className="z-[100] relative bg-white px-5 md:px-6 py-20">
+      <div className="container mx-auto max-w-7xl">
         {/* Header with green line */}
         <div className="flex items-center mb-2">
           <div className="w-8 h-0.5 bg-orange-500 mr-3"></div>
           <span className="text-gray-600 font-medium">Contact Us</span>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between gap-8 items-end mt-4">
+        <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-20 items-end mt-4">
           {/* Left side - Form */}
           <div className="w-full lg:w-7/12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-10 leading-tight">
@@ -85,7 +85,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("firstName")}
                     onBlur={() => handleBlur("firstName")}
-                    className="w-full p-4 bg-gray-50 rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-[#a4e22b]/30"
+                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
                     required
                   />
                   <label
@@ -108,7 +108,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("lastName")}
                     onBlur={() => handleBlur("lastName")}
-                    className="w-full p-4 bg-gray-50 rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-[#a4e22b]/30"
+                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
                     required
                   />
                   <label
@@ -134,7 +134,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("email")}
                     onBlur={() => handleBlur("email")}
-                    className="w-full p-4 bg-gray-50 rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-[#a4e22b]/30"
+                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
                     required
                   />
                   <label
@@ -157,7 +157,7 @@ export default function ContactSection() {
                     onChange={handleChange}
                     onFocus={() => handleFocus("phone")}
                     onBlur={() => handleBlur("phone")}
-                    className="w-full p-4 bg-gray-50 rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-[#a4e22b]/30"
+                    className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
                     required
                   />
                   <label
@@ -182,7 +182,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   onFocus={() => handleFocus("subject")}
                   onBlur={() => handleBlur("subject")}
-                  className="w-full p-4 bg-gray-50 rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-[#a4e22b]/30"
+                  className="w-full p-4 bg-gray-50 shadow-md rounded-md outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
                   required
                 />
                 <label
@@ -205,7 +205,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   onFocus={() => handleFocus("message")}
                   onBlur={() => handleBlur("message")}
-                  className="w-full p-4 bg-gray-50 rounded-md h-48 resize-none outline-none transition-all duration-200 focus:ring-2 focus:ring-[#a4e22b]/30"
+                  className="w-full p-4 bg-gray-50 shadow-md rounded-md h-48 resize-none outline-none transition-all duration-200 focus:ring-2 focus:ring-orange-500"
                   required
                 ></textarea>
                 <label
@@ -268,7 +268,7 @@ export default function ContactSection() {
                 </div>
               </div>
             </div> */}
-            <div className="">
+            <div className="hidden md:block">
               <CircularText
                 text="Groviaus*Digital*Marketing*"
                 onHover="goBonkers"

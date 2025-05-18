@@ -110,7 +110,7 @@ const Project = () => {
   return (
     <div
       ref={containerRef}
-      className="mx-auto md:mx-5 shadow-2xl z-[100] relative px-6 py-30 bg-white rounded-4xl overflow-hidden"
+      className="mx-auto md:mx-5 shadow-2xl z-[100] relative px-5 py-30 bg-white rounded-4xl overflow-hidden"
     >
       <div
         className={`text-center mb-20 transition-all duration-1000 ease-out ${
