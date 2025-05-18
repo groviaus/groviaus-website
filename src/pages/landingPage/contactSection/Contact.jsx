@@ -57,7 +57,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl  sm:mx-10 -mb-10 -mt-16">
+    <section className="z-[100] relative bg-white px-5 md:px-6 py-30 rounded-3xl  sm:mx-5 -mb-10 -mt-16">
       <div className="container mx-auto max-w-7xl">
         {/* Header with green line */}
         <div className="flex items-center mb-5">
