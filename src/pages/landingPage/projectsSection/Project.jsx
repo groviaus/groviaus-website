@@ -167,7 +167,7 @@ const Project = () => {
             onMouseLeave={() => setHoveredCard(null)}
             onMouseMove={(e) => handleMouseMove(e, project.id)}
           >
-            <div className="relative sm:p-5 sm:pt-4 pb-0 sm:h-[380px] rounded-t-3xl overflow-hidden">
+            <div className="relative sm:p-5 sm:pt-4 pb-0 md:h-[380px] rounded-t-3xl overflow-hidden">
               <div
                 className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
