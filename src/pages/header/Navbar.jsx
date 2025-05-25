@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="relative flex items-center justify-between py-8 px-4 sm:px-6">
+    <nav className="relative flex items-center justify-between py-8 px-4 sm:px-6 z-10">
       {/* Mobile menu button */}
       <button
         className="sm:hidden p-2 rounded-md hover:bg-gray-100"

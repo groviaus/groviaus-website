@@ -7,7 +7,7 @@ import Footer from "../footer/Footer";
 import Contact from "./contactSection/Contact";
 function LandingPage() {
   return (
-      <>
+    <>
       <HeroSection />
       <Services />
       <AboutUs />
