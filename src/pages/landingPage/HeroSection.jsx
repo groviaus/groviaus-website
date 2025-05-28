@@ -16,43 +16,43 @@ export default function HeroSection() {
               <div key={i} className="h-full border-l border-gray-100"></div>
             ))}
         </div> */}
-        <div
-          className="absolute bg-transparent rounded-full inset-0 size-[700px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]"
-        >
-          <div
-            style={{ animationDuration: "5s" }}
-            className="absolute bg-transparent rounded-full inset-0 size-[700px] border-t-1  border-violet-500 animate-spin z-[1]"
-          ></div>
-        </div>
-        <div className="absolute bg-transparent rounded-full inset-0 size-[850px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-          <div
-            style={{ animationDuration: "5s" }}
-            className="absolute bg-transparent rounded-full inset-0 size-[850px]  border-b-1 border-violet-500 animate-spin z-[1]"
-          ></div>
-        </div>
-        <div className="absolute bg-transparent rounded-full inset-0 size-[1000px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-          <div
-            style={{ animationDuration: "5s" }}
-            className="absolute bg-transparent rounded-full inset-0 size-[1000px]  border-r-1 border-violet-500 animate-spin z-[1]"
-          ></div>
-        </div>
-        <div className="absolute bg-transparent rounded-full inset-0 size-[1150px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-          <div
-            style={{ animationDuration: "5s" }}
-            className="absolute bg-transparent rounded-full inset-0 size-[1150px]  border-l-1 border-violet-500 animate-spin z-[1]"
-          ></div>
-        </div>
-        <div className="absolute bg-transparent rounded-full inset-0 size-[1300px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-          <div
-            style={{ animationDuration: "5s" }}
-            className="absolute bg-transparent rounded-full inset-0 size-[1300px]  border-t-1 border-violet-500 animate-spin z-[1]"
-          ></div>
-        </div>
-        <div className="absolute bg-transparent rounded-full inset-0 size-[1450px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-          <div
-            style={{ animationDuration: "5s" }}
-            className="absolute bg-transparent rounded-full inset-0 size-[1450px]  border-b-1 border-violet-300 animate-spin z-[1]"
-          ></div>
+        <div className="hidden sm:block">
+          <div className="absolute bg-transparent rounded-full inset-0 size-[700px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+            <div
+              style={{ animationDuration: "5s" }}
+              className="absolute bg-transparent rounded-full inset-0 size-[700px] border-t-1  border-violet-500 animate-spin z-[1]"
+            ></div>
+          </div>
+          <div className="absolute bg-transparent rounded-full inset-0 size-[850px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+            <div
+              style={{ animationDuration: "5s" }}
+              className="absolute bg-transparent rounded-full inset-0 size-[850px]  border-b-1 border-violet-500 animate-spin z-[1]"
+            ></div>
+          </div>
+          <div className="absolute bg-transparent rounded-full inset-0 size-[1000px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+            <div
+              style={{ animationDuration: "5s" }}
+              className="absolute bg-transparent rounded-full inset-0 size-[1000px]  border-r-1 border-violet-500 animate-spin z-[1]"
+            ></div>
+          </div>
+          <div className="absolute bg-transparent rounded-full inset-0 size-[1150px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+            <div
+              style={{ animationDuration: "5s" }}
+              className="absolute bg-transparent rounded-full inset-0 size-[1150px]  border-l-1 border-violet-500 animate-spin z-[1]"
+            ></div>
+          </div>
+          <div className="absolute bg-transparent rounded-full inset-0 size-[1300px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+            <div
+              style={{ animationDuration: "5s" }}
+              className="absolute bg-transparent rounded-full inset-0 size-[1300px]  border-t-1 border-violet-500 animate-spin z-[1]"
+            ></div>
+          </div>
+          <div className="absolute bg-transparent rounded-full inset-0 size-[1450px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+            <div
+              style={{ animationDuration: "5s" }}
+              className="absolute bg-transparent rounded-full inset-0 size-[1450px]  border-b-1 border-violet-300 animate-spin z-[1]"
+            ></div>
+          </div>
         </div>
         <div className="absolute bg-transparent rounded-full inset-0 size-[1600px]  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
           <div
